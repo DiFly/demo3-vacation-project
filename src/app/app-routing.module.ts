@@ -7,7 +7,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'auth/login', pathMatch: 'full'},
   {path: '', component: MainLayoutComponent, children: [
       {path: 'profile', loadChildren: './module/user/user.module#UserModule'},
-      {path: 'team-leader', loadChildren: './module/team-leader/team-leader.module#TeamLeaderModule'},
+      {path: 'team', loadChildren: './module/team-leader/team-leader.module#TeamLeaderModule'},
       {path: 'admin', loadChildren: './module/admin/admin.module#AdminModule'},
     ]},
   {path: 'auth', loadChildren: './module/auth/auth.module#AuthModule'},

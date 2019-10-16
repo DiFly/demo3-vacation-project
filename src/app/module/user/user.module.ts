@@ -12,7 +12,8 @@ import { ProfileRequestVacationPageComponent } from './shared/components/profile
     RouterModule.forChild([
       {
         path: '', component: ProfileLayoutComponent, children: [
-          {path: '', component: ProfileViewPageComponent},
+          {path: '', redirectTo: '/profile/view', pathMatch: 'full'},
+          {path: 'view', component: ProfileViewPageComponent},
           {path: 'request-vacation', component: ProfileRequestVacationPageComponent}
         ]
       }
