@@ -1,11 +1,17 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
+
 import { ListVacationRequestsPageComponent } from './shared/components/list-vacation-requests-page/list-vacation-requests-page.component';
 import { TeamCalendarPageComponent } from './shared/components/team-calendar-page/team-calendar-page.component';
 import { ListEmployeesPageComponent } from './shared/components/list-employees-page/list-employees-page.component';
 
 @NgModule({
+  declarations: [
+    ListVacationRequestsPageComponent,
+    TeamCalendarPageComponent,
+    ListEmployeesPageComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild([
@@ -17,8 +23,7 @@ import { ListEmployeesPageComponent } from './shared/components/list-employees-p
   ],
   exports: [
     RouterModule
-  ],
-  declarations: [ListVacationRequestsPageComponent, TeamCalendarPageComponent, ListEmployeesPageComponent]
+  ]
 })
 export class TeamLeaderModule {
 }
