@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Hind&display=swap');
+
+* {
+  font-family: 'Muli', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+
+  color: #eeeeee;
+  background-color: #222222;
+}
+
+
+button {
+  height: 45px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 23px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  &.btn-standart {
+    width: 250px;
+    color: #FFFFFF;
+    background: linear-gradient(270deg, #764BA2 0%, #667EEA 100%);
+  }
+
+  &.btn-cancel {
+    width: 145px;
+    color: #F2F2F2;
+    border: 1px solid #878787;
+  }
+
+
+}
+
