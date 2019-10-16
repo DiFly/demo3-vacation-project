@@ -4,6 +4,7 @@ import {CommonModule} from '@angular/common';
 import { AuthLayoutComponent } from './shared/components/auth-layout/auth-layout.component';
 import { LoginPageComponent } from './shared/components/login-page/login-page.component';
 import { ForgotPasswordPageComponent } from './shared/components/forgot-password-page/forgot-password-page.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,8 @@ import { ForgotPasswordPageComponent } from './shared/components/forgot-password
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild([
       {
         path: '', component: AuthLayoutComponent, children: [

@@ -1,0 +1,188 @@
+#container {
+  height: 100vh;
+  width: 100%;
+
+  background-image:url('/assets/img/manuel.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  //background-color: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  :only-child{
+    background-color: transparent;
+  }
+
+  .inner-container {
+    width: 250px;
+    //background-color: transparent;
+
+    .logo-block {
+      background-color: transparent;
+      width: 100%;
+      text-align: center;
+      padding-bottom: 50px;
+
+      img {
+        width: 45px;
+        height: 45px;
+      }
+
+      h2 {
+        background-color: transparent;
+        font-family: Muli;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+        text-align: center;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        span {
+          background-color: transparent;
+          font-weight: 700;
+        }
+      }
+    }
+
+    form {
+      width: 100%;
+      background-color: transparent;
+
+      input {
+        width: 100%;
+        border: 0px;
+        //width: 250px;
+        height: 45px;
+        border-radius: 5px;
+
+        font-family: Muli;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+
+        color: #FFFFFF;
+      }
+
+      .email {
+        padding-left:35px;
+        box-sizing: border-box;
+
+        background-color: rgba(255, 255, 255, 0.1);
+        background-image:url('/assets/img/group-user.png');
+        background-repeat:no-repeat;
+        background-position: 10px 17px;
+      }
+
+      .password {
+        padding-left:35px;
+        box-sizing: border-box;
+
+        background-color: rgba(255, 255, 255, 0.1);
+        background-image:url('/assets/img/group-key.png');
+        background-repeat:no-repeat;
+        background-position: 10px 17px;
+      }
+
+      .error-block {
+        background-color: transparent;
+        height: 20px;
+
+        small {
+          background-color: transparent;
+          font-size: 12px;
+          line-height: 15px;
+          text-align: center;
+
+          color: #EA6676;
+        }
+      }
+
+      .submit-btn {
+        margin-top: 40px;
+        background: linear-gradient(270deg, #764BA2 0%, #667EEA 100%);
+
+        font-family: Muli;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 23px;
+
+        border: 0px;
+        width: 250px;
+        color: white;
+        height: 45px;
+        border-radius: 5px;
+
+        text-align: center;
+        transition-duration: 0.4s;
+
+        &.submit-btn_blocked {
+          background: linear-gradient(270deg, #a862e9 0%, #6d8cff 100%);
+          opacity: 0.5;
+        }
+
+        &.submit-btn_unblocked:hover {
+          -webkit-box-shadow: 0px 0px 10px 0px rgba(126,130,214,1);
+          -moz-box-shadow: 0px 0px 10px 0px rgba(126,130,214,1);
+          box-shadow: 0px 0px 10px 0px rgba(126,130,214,1);
+        }
+
+        &.send-btn {
+          margin-top: 20px;
+        }
+      }
+
+      .help-text {
+        background-color: transparent;
+        width: 300px;
+        position: relative;
+
+        left: -25px;
+
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+
+        color: #F2F2F2;
+        padding-bottom: 25px;
+      }
+
+      .email-checked-block {
+        background-color: transparent;
+        text-align: center;
+        height: 20px;
+
+        .email-checked-text {
+          background-color: transparent;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 18px;
+
+          color: #66EACA;
+        }
+      }
+
+    }
+
+    .btn-change-form {
+      background-color: transparent;
+      text-align: center;
+      margin-top: 10px;
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+
+      color: #667EEA;
+    }
+  }
+}

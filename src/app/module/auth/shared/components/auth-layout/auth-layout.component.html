@@ -1,2 +1,55 @@
-<p>auth-layout works!</p>
+<div id="container">
+  <div class="inner-container">
+    <div class="logo-block">
+      <img src="/assets/img/x33.png">
+      <h2><span>SOFTHEME</span> VACATIONS</h2>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" *ngIf="!forgotPassword">
+      <input type="text" placeholder="email" class="email" formControlName="email">
+      <div class="error-block">
+        <div *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">
+          <small *ngIf="loginForm.get('email').errors.required && loginForm.get('email').touched">Field is not be empty. </small>
+          <small *ngIf="loginForm.get('email').touched && loginForm.get('email').errors.email">It's not a valid email. </small>
+        </div>
+        <small *ngIf="serverBadEmail && loginForm.get('email').untouched">Email is unregistered.</small>
+      </div>
+      <input type="password" placeholder="password" class="password" formControlName="password">
+      <div class="error-block">
+        <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
+          <small *ngIf="loginForm.get('password').errors.required && loginForm.get('password').touched">Field is not be empty. </small>
+          <small *ngIf="loginForm.get('password').touched && loginForm.get('password').errors.minlength">Must be more char in this field. </small>
+        </div>
+        <small *ngIf="serverBadPassword && loginForm.get('password').untouched">Wrong password. Please, try again!</small>
+
+      </div>
+      <button class="submit-btn" type="submit" [disabled]="loginForm.invalid" [ngClass]="{'submit-btn_blocked': loginForm.invalid, 'submit-btn_unblocked': loginForm.valid}">LOG IN</button>
+    </form>
+
+    <form [formGroup]="forgotForm" (ngSubmit)="onSubmitForgotten()" *ngIf="forgotPassword">
+      <div class="help-text">
+        Enter your email address and we’ll send you a link to reset your password
+      </div>
+
+      <input type="text" name="email" placeholder="email" class="email" formControlName="email">
+      <div class="error-block">
+        <div *ngIf="forgotForm.get('email').invalid && forgotForm.get('email').touched">
+          <small *ngIf="forgotForm.get('email').errors.required && forgotForm.get('email').touched">Field is not be empty. </small>
+          <small *ngIf="forgotForm.get('email').touched && forgotForm.get('email').errors.email">It's not a valid email. </small>
+        </div>
+        <small *ngIf="serverBadEmail && forgotForm.get('email').untouched">Email is unregistered.</small>
+      </div>
+      <div class="email-checked-block">
+        <small *ngIf="goodSendMailForForgotPassword" class="email-checked-text">
+          <img src="assets/img/group-check-mail.png">
+          Ready! Check your email, please.
+        </small>
+      </div>
+      <button class="submit-btn send-btn" type="submit" [disabled]="forgotForm.invalid" [ngClass]="{'submit-btn_blocked': forgotForm.invalid, 'submit-btn_unblocked': forgotForm.valid}">SEND</button>
+    </form>
+
+    <div class="btn-change-form" (click)="changeForm()" *ngIf="!forgotPassword">forgot password?</div>
+    <div class="btn-change-form" (click)="changeForm()" *ngIf="forgotPassword">Never mind, I remember</div>
+  </div>
+</div>
 <router-outlet></router-outlet>
