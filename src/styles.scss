@@ -45,7 +45,6 @@ a {
   }
 
   & span:after {
-    content: '\00bb';
     position: absolute;
     opacity: 0;
     top: 0;
@@ -61,6 +60,11 @@ a {
   &:hover span:after {
     opacity: 1;
     right: 0;
+  }
+
+  &.active-link {
+    font-weight: 700;
+    color: white;
   }
 }
 
