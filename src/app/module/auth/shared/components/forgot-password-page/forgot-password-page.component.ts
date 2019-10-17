@@ -8,6 +8,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class ForgotPasswordPageComponent implements OnInit {
   forgotForm: FormGroup;
+  goodSendMailForForgotPassword = false;
 
   constructor() { }
 
@@ -24,6 +25,7 @@ export class ForgotPasswordPageComponent implements OnInit {
     }
 
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.forgotForm.value, null, 4));
+    this.goodSendMailForForgotPassword = true;
   }
 
 }
