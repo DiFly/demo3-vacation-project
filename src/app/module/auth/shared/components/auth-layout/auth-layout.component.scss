@@ -12,13 +12,9 @@
   align-items: center;
   justify-content: center;
 
-  :only-child{
-    background-color: transparent;
-  }
 
   .inner-container {
     width: 250px;
-    //background-color: transparent;
 
     .logo-block {
       background-color: transparent;
@@ -32,7 +28,6 @@
       }
 
       h2 {
-        background-color: transparent;
         font-family: Muli;
         font-style: normal;
         font-weight: 400;
@@ -43,7 +38,6 @@
         text-transform: uppercase;
 
         span {
-          background-color: transparent;
           font-weight: 700;
         }
       }
