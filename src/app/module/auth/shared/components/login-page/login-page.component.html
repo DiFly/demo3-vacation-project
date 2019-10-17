@@ -2,7 +2,7 @@
   <input type="text" placeholder="email" class="email" formControlName="email">
   <div class="error-block">
     <div *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">
-      <small class="text-small" *ngIf="loginForm.get('email').errors.required && loginForm.get('email').touched">Field is not be empty. </small>
+      <small class="text-small " *ngIf="loginForm.get('email').errors.required && loginForm.get('email').touched">Field is not be empty. </small>
       <small class="text-small" *ngIf="loginForm.get('email').touched && loginForm.get('email').errors.email">It's not a valid email. </small>
     </div>
   </div>
@@ -15,7 +15,7 @@
 <!--    <small *ngIf="serverBadPassword && loginForm.get('password').untouched">Wrong password. Please, try again!</small>-->
   </div>
   <button
-    class="btn-standart submit-btn send-btn"
+    class="btn-standart submit-btn"
     type="submit"
     [disabled]="loginForm.invalid"
     [ngClass]="{'submit-btn_blocked': loginForm.invalid, 'submit-btn_unblocked': loginForm.valid}"
