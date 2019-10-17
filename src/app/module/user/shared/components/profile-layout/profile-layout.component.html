@@ -1,2 +1,33 @@
-<p>profile-layout works!</p>
-<router-outlet></router-outlet>
+<div class="container">
+  <div class="profile br10">
+    <div class="title br10">
+      <p class="text-big text-bold">My Profile</p>
+    </div>
+
+    <div class="user-title">
+      <img src="/assets/img/random-user_imageF39.png">
+      <div class="user-title_inform">
+        <h3 class="text-big">User Name</h3>
+        <p class="text-middle">Account Manager</p>
+        <p><span class="green-round"></span> active</p>
+<!--        <p><span class="red-round"></span> inactive</p>-->
+      </div>
+    </div>
+
+    <div>
+      <div class="simple-inform-block">
+        <p class="text-small">date od birth</p>
+        <p class="text-middle">11 January 1994</p>
+      </div>
+      <div class="simple-inform-block">
+        <p class="text-small">personal email</p>
+        <p class="text-middle">11 January 1994</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="block-right">
+    <router-outlet></router-outlet>
+  </div>
+</div>
