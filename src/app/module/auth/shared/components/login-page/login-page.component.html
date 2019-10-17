@@ -2,19 +2,24 @@
   <input type="text" placeholder="email" class="email" formControlName="email">
   <div class="error-block">
     <div *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">
-      <small *ngIf="loginForm.get('email').errors.required && loginForm.get('email').touched">Field is not be empty. </small>
-      <small *ngIf="loginForm.get('email').touched && loginForm.get('email').errors.email">It's not a valid email. </small>
+      <small class="text-small" *ngIf="loginForm.get('email').errors.required && loginForm.get('email').touched">Field is not be empty. </small>
+      <small class="text-small" *ngIf="loginForm.get('email').touched && loginForm.get('email').errors.email">It's not a valid email. </small>
     </div>
   </div>
   <input type="password" placeholder="password" class="password" formControlName="password">
   <div class="error-block">
     <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
-      <small *ngIf="loginForm.get('password').errors.required && loginForm.get('password').touched">Field is not be empty. </small>
-      <small *ngIf="loginForm.get('password').touched && loginForm.get('password').errors.minlength">Must be more char in this field. </small>
+      <small class="text-small" *ngIf="loginForm.get('password').errors.required && loginForm.get('password').touched">Field is not be empty. </small>
+      <small class="text-small" *ngIf="loginForm.get('password').touched && loginForm.get('password').errors.minlength">Must be more char in this field. </small>
     </div>
 <!--    <small *ngIf="serverBadPassword && loginForm.get('password').untouched">Wrong password. Please, try again!</small>-->
   </div>
-  <button class="submit-btn" type="submit" [disabled]="loginForm.invalid" [ngClass]="{'submit-btn_blocked': loginForm.invalid, 'submit-btn_unblocked': loginForm.valid}">LOG IN</button>
+  <button
+    class="btn-standart submit-btn send-btn"
+    type="submit"
+    [disabled]="loginForm.invalid"
+    [ngClass]="{'submit-btn_blocked': loginForm.invalid, 'submit-btn_unblocked': loginForm.valid}"
+  >LOG IN</button>
 </form>
 
-<div class="btn-change-form" routerLink="/auth/forgot-password">forgot password?</div>
+<div class="btn-change-form ta-c" routerLink="/auth/forgot-password">forgot password?</div>

@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Hind&display=swap');
 
+:root {
+  --color-red: #EA6676;
+  --color-blue: #667EEA;
+  --color-green: #66EACA;
+  --color-lightwhite: #F2F2F2;
+}
+
 * {
   font-family: 'Muli', sans-serif;
   font-style: normal;
@@ -19,6 +26,7 @@ body {
 button {
   height: 45px;
   box-sizing: border-box;
+  border: 0px;
   border-radius: 5px;
   font-weight: bold;
   font-size: 18px;
@@ -38,8 +46,15 @@ button {
     color: #F2F2F2;
     border: 1px solid #878787;
   }
+}
 
+.text-small {
+  font-size: 12px;
+  line-height: 15px;
+}
 
+.ta-c {
+  text-align: center;
 }
 
 .br5 {
