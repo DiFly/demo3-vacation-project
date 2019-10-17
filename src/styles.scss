@@ -6,6 +6,8 @@
   --color-blue: #667EEA;
   --color-green: #66EACA;
   --color-lightwhite: #F2F2F2;
+  --color-grey: #878787;
+  --color-darkgrey: #2E2E2E;;
 }
 
 * {
@@ -22,6 +24,45 @@ body {
   background-color: #222222;
 }
 
+a {
+  text-decoration: none;
+  border: none;
+  text-align: center;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  :hover {
+    padding-left: 10px;
+  }
+
+  & span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+  }
+
+  & span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.3s;
+  }
+
+  &:hover span {
+    padding-right: 15px;
+    color: var(--color-blue);
+  }
+
+  &:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+}
 
 button {
   height: 45px;
@@ -48,13 +89,38 @@ button {
   }
 }
 
+//ToDO TEXT BLOCK
 .text-small {
   font-size: 12px;
   line-height: 15px;
 }
 
+.text-middle {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.text-middle-plus {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.text-big {
+  font-size: 18px;
+  line-height: 23px;
+}
+
+.text-big-plus {
+  font-size: 20px;
+  line-height: 25px;
+}
+
 .ta-c {
   text-align: center;
+}
+
+.text-bold {
+  font-weight: 700;
 }
 
 .br5 {
