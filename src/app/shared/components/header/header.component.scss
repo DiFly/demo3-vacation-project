@@ -1,6 +1,7 @@
 header {
   background: var(--color-darkgrey);
-  width: 100vw;
+  width: 100%;
+  box-sizing: border-box;
   min-width: 460px;
   height: 85px;
   display: flex;

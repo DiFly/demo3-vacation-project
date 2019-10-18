@@ -1,0 +1,22 @@
+:host{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 85px 1fr;
+  grid-gap: 3px;
+  grid-template-areas:
+    'header header'
+    'nav main';
+}
+
+app-header {
+  grid-area: header;
+}
+
+app-left-nav-bar {
+  grid-area: nav;
+}
+
+router-outlet {
+  grid-area: main;
+}
