@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-profile-request-vacation-page',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile-request-vacation-page.component.scss']
 })
 export class ProfileRequestVacationPageComponent implements OnInit {
+  requestVacation: FormGroup;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  sendRequestVacation() {
+    alert('Click button: REQUEST VACATION');
+  }
 }

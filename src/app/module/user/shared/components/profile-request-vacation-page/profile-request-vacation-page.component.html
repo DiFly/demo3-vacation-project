@@ -4,39 +4,44 @@
 </div>
 
 
-<div class="current-user_vacations br10">
+<div class="current-user_vacations-request br10">
   <div class="title">
     <p class="text-big text-bold">My Profile</p>
   </div>
 
-  <table>
-    <thead>
-    <tr>
-      <th>vacations dates</th>
-      <th>descriptions</th>
-      <th>status</th>
-      <th>vacation balance</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <th class="dates">15 Jun 18 - 20 Jun 2018 </th>
-      <th class="description">Vacation</th>
-      <th class="status">Approved</th>
-      <th class="balance">05 days</th>
-    </tr>
-    <tr>
-      <th>15 Jun 18 - 20 Jun 2018 </th>
-      <th>University</th>
-      <th>Approved</th>
-      <th>05 days</th>
-    </tr>
-    <tr>
-      <th>15 Jun 18 - 20 Jun 2018 </th>
-      <th>Vacation</th>
-      <th>Denied</th>
-      <th>05 days</th>
-    </tr>
-    </tbody>
-  </table>
+  <form [formGroup]="requestVacation" (ngSubmit)="sendRequestVacation()">
+    <div>
+      <label>vacation type</label>
+      <select name="vacation_type">
+        <option value="0" selected>Vacation</option>
+        <option value="1">University</option>
+      </select>
+    </div>
+
+    <div>
+      <label>comment</label>
+      <textarea name="message" rows="10" cols="30" placeholder="Enter your comment here"></textarea>
+    </div>
+
+    <div>
+      <label>from</label>
+      <input type="date">
+    </div>
+
+    <div>
+      <label>to</label>
+      <input type="date">
+    </div>
+
+    <div>
+      <label>amount</label>
+      <div>
+        <p>2</p>
+        <p>days in vacation</p>
+      </div>
+    </div>
+
+    <button class="btn-cancel">CANCEL</button>
+    <button type="submit" class="btn-standart">SEND REQUEST</button>
+  </form>
 </div>
