@@ -19,8 +19,8 @@ export class ProfileRequestVacationPageComponent implements OnInit {
       vacationDataTo: new FormControl()
     });
     this.requestVacation.controls.vacationType.setValue('0', {onlySelf: true});
-    const date = new Date();
-    this.requestVacation.controls.vacationDataFrom.setValue(date.getDate() + ' / ' + date.getMonth() + ' / ' + date.getFullYear());
+    const date = new Date(new Date().valueOf() + 86_400_000);
+    this.requestVacation.controls.vacationDataFrom.setValue(date.getDate() + ' / ' + (date.getMonth() + 1) + ' / ' + date.getFullYear());
   }
 
   sendRequestVacation() {

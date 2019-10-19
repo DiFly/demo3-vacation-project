@@ -20,14 +20,14 @@ export class AmountDatePipe implements PipeTransform {
       }
       return true;
     }
-    console.log(from, ' : ' , notNaN(from), ' | ', to, ' : ' , notNaN(to) );
+    // console.log(from, ' : ' , notNaN(from), ' | ', to, ' : ' , notNaN(to) );
     if (notNaN(from) && notNaN(to) && from.length === 3 && to.length === 3) {
 
       const dateFrom = new Date(from[2], (from[1] - 1), from[0]);
       const dateTo = new Date(to[2], (to[1] - 1), to[0]);
-      const amountDay = (dateTo.valueOf() - dateFrom.valueOf()) / (1000 * 60 * 60 * 24);
-      console.log(dateFrom.toDateString());
-      console.log(amountDay);
+      const amountDay = (dateTo.valueOf() - dateFrom.valueOf()) / (86_400_000) + 1;
+      // console.log(dateFrom.toDateString());
+      // console.log(amountDay);
 
       if (amountDay < 0) {
         return '0';

@@ -41,17 +41,41 @@
     thead  {
       border-top: 1px solid #878787;
       border-bottom: 1px solid #878787;
-      tr th {
-        color: var(--color-grey);
+      tr{
+        height: 35px;
+        th {
+          color: var(--color-grey);
+        }
       }
 
     }
 
-    tbody tr th{
-      &.dates {}
-      &.description {}
-      &.status {}
-      &.balance {}
+    tbody tr{
+      height: 35px;
+      border-top: 1px solid #878787;
+
+      th{
+        &.dates {
+          font-weight: 600;
+        }
+        &.description {
+          color: var(--color-grey);
+          font-weight: 400;
+        }
+        &.status {
+          font-weight: 600;
+
+          &.approved {
+            color: var(--color-green);
+          }
+          &.denied {
+            color: var(--color-red);
+          }
+        }
+        &.balance {
+          font-weight: 400;
+        }
+      }
     }
   }
 }

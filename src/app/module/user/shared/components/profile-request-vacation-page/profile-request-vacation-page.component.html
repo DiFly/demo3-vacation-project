@@ -10,58 +10,59 @@
   </div>
 
   <form [formGroup]="requestVacation">
-    <div>
-      <label>vacation type</label>
-      <br/>
-      <select name="vacation_type" formControlName="vacationType">
-        <option value="0" selected>Vacation</option>
-        <option value="1">University</option>
-      </select>
-    </div>
-
-    <div>
-      <label>comment</label>
-      <br/>
-      <textarea
-        name="message"
-        rows="10" cols="30"
-        placeholder="Enter your comment here"
-        formControlName="vacationComment"
-      ></textarea>
-    </div>
-
-    <div>
-      <label>from</label>
-      <br/>
-      <input
-        type="text"
-        placeholder="XX/XX/XXXX"
-        formControlName="vacationDataFrom"
-        #dateFrom
-      >
-    </div>
-
-    <div>
-      <label>to</label>
-      <br/>
-      <input
-        type="text"
-        placeholder="XX/XX/XXXX"
-        formControlName="vacationDataTo"
-        #dateTo
-      >
-    </div>
-
-    <div>
-      <label>amount</label>
-      <br/>
+    <div class="block">
       <div>
-        <p #amount>{{dateFrom.value | amountDate: dateTo.value}}</p>
-        <p>days in vacation</p>
+        <label>vacation type</label>
+        <select name="vacation_type" formControlName="vacationType">
+          <option value="0" selected>Vacation</option>
+          <option value="1">University</option>
+        </select>
+      </div>
+
+      <div>
+        <label>comment</label>
+        <textarea
+          name="message"
+          rows="10" cols="30"
+          placeholder="Enter your comment here"
+          formControlName="vacationComment"
+        ></textarea>
       </div>
     </div>
 
-    <button class="btn-cancel" (click)="clickCancel()">CANCEL</button>
-    <button type="submit" class="btn-standart" (click)="sendRequestVacation()">SEND REQUEST</button>
+    <div class="block">
+      <div>
+        <label>from</label>
+        <input
+          type="text"
+          placeholder="XX/XX/XXXX"
+          formControlName="vacationDataFrom"
+          #dateFrom
+        >
+      </div>
+
+      <div>
+        <label>to</label>
+        <input
+          type="text"
+          placeholder="XX/XX/XXXX"
+          formControlName="vacationDataTo"
+          #dateTo
+        >
+      </div>
+
+      <div>
+        <label>amount</label>
+        <div class="amount">
+          <div class="days br5" #amount>{{dateFrom.value | amountDate: dateTo.value}}</div>
+          <div> days in vacation</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-block">
+      <button class="btn-cancel" (click)="clickCancel()">CANCEL</button>
+      <button type="submit" class="btn-standart" (click)="sendRequestVacation()">SEND REQUEST</button>
+    </div>
   </form>
 </div>

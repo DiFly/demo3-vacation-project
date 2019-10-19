@@ -7,6 +7,7 @@ import { AddEmployeePageComponent } from './shared/components/add-employee-page/
 import { AddTeamPageComponent } from './shared/components/add-team-page/add-team-page.component';
 import { EditTeamPageComponent } from './shared/components/edit-team-page/edit-team-page.component';
 import { ListTeamPageComponent } from './shared/components/list-team-page/list-team-page.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { ListTeamPageComponent } from './shared/components/list-team-page/list-t
       {path: 'edit-employee/:id', component: EditProfilePageComponent},
       {path: 'edit-team/:id', component: EditTeamPageComponent},
       {path: 'team-list', component: ListTeamPageComponent}
-    ])
+    ]),
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     RouterModule
