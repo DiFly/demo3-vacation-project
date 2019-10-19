@@ -3,7 +3,7 @@
   background-color: var(--color-darkgrey);
   margin-bottom: 5px;
   padding-top: 35px;
-  height: 200px;
+  //height: 200px;
   min-width: 450px;
   background-image: url('/assets/img/billboard.png');
   background-repeat: no-repeat;
@@ -17,6 +17,7 @@
 
   & button {
      margin-top: 20px;
+    margin-bottom: 30px;
   }
 }
 
@@ -35,13 +36,22 @@
 
   table {
     width: 100%;
+    border-collapse: collapse;
 
     thead  {
       border-top: 1px solid #878787;
+      border-bottom: 1px solid #878787;
       tr th {
         color: var(--color-grey);
       }
 
+    }
+
+    tbody tr th{
+      &.dates {}
+      &.description {}
+      &.status {}
+      &.balance {}
     }
   }
 }
