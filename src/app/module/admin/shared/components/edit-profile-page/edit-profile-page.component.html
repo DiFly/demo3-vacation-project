@@ -1,11 +1,17 @@
-<div class="current-user_vacations-request br10">
+<div class="edit-user_request br10">
   <div class="title">
     <p class="text-big text-bold">Edit Profile</p>
   </div>
 
   <form [formGroup]="editForm">
 <!--    first group-->
-    <div class="block">
+    <div class="block-first">
+
+      <div class="photo-img">
+        <img src="/assets/img/user.png">
+        <button type="file" class="input-file">EDIT PHOTO</button>
+      </div>
+
       <div>
         <label class="text-small">name</label>
         <input type="text" placeholder="Name">
@@ -30,11 +36,11 @@
       </div>
       <div>
         <label class="text-small">days in vacation</label>
-        <input type="number" min="0">
+        <input type="number" min="0" value="16" placeholder="Enter days">
       </div>
     </div>
 
-    <div>
+    <div class="second-block">
       <div class="block-inner">
         <div>
           <label>from</label>
@@ -45,12 +51,33 @@
           <input type="text" placeholder="XX/XX/XXXX">
         </div>
       </div>
-    </div>
 
 
-    <div class="button-block">
-      <button class="btn-cancel" (click)="cancel()">CANCEL</button>
-      <button type="submit" class="btn-standart" (click)="sendRequestVacation()">SAVE CHANGES</button>
+
+      <div class="block-inner">
+        <div>
+          <label>from</label>
+          <input type="text" placeholder="XX/XX/XXXX">
+        </div>
+        <div>
+          <label class="text-small">name</label>
+          <input type="text" placeholder="Name">
+        </div>
+        <div>
+          <label class="text-small">name</label>
+          <input type="text" placeholder="Name">
+        </div>
+        <div>
+          <label>to</label>
+          <input type="text" placeholder="XX/XX/XXXX">
+        </div>
+      </div>
+
+
+      <div class="button-block">
+        <button class="btn-cancel" (click)="cancel()">CANCEL</button>
+        <button type="submit" class="btn-standart" (click)="sendRequestVacation()">SAVE CHANGES</button>
+      </div>
     </div>
   </form>
 </div>
