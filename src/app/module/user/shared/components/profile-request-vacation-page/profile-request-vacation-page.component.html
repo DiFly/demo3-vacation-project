@@ -33,20 +33,30 @@
     <div>
       <label>from</label>
       <br/>
-      <input type="date" formControlName="vacationDataFrom">
+      <input
+        type="text"
+        placeholder="XX/XX/XXXX"
+        formControlName="vacationDataFrom"
+        #dateFrom
+      >
     </div>
 
     <div>
       <label>to</label>
       <br/>
-      <input type="date" formControlName="vacationDataTo">
+      <input
+        type="text"
+        placeholder="XX/XX/XXXX"
+        formControlName="vacationDataTo"
+        #dateTo
+      >
     </div>
 
     <div>
       <label>amount</label>
       <br/>
       <div>
-        <p>2</p>
+        <p #amount>{{dateFrom.value | amountDate: dateTo.value}}</p>
         <p>days in vacation</p>
       </div>
     </div>

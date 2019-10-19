@@ -19,11 +19,13 @@ export class ProfileRequestVacationPageComponent implements OnInit {
       vacationDataTo: new FormControl()
     });
     this.requestVacation.controls.vacationType.setValue('0', {onlySelf: true});
-    this.requestVacation.controls.vacationDataFrom.setValue(Date.now().toString().substring(0, 10));
+    const date = new Date();
+    this.requestVacation.controls.vacationDataFrom.setValue(date.getDate() + ' / ' + date.getMonth() + ' / ' + date.getFullYear());
   }
 
   sendRequestVacation() {
     alert('Click button: REQUEST VACATION');
+    console.log(this.requestVacation.getRawValue());
   }
 
   clickCancel() {

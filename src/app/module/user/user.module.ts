@@ -7,11 +7,13 @@ import { ProfileViewPageComponent } from './shared/components/profile-view-page/
 import { ProfileLayoutComponent } from './shared/components/profile-layout/profile-layout.component';
 import { ProfileRequestVacationPageComponent } from './shared/components/profile-request-vacation-page/profile-request-vacation-page.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { AmountDatePipe } from './shared/pipes/amount-date.pipe';
 
 @NgModule({
   declarations: [ProfileViewPageComponent,
     ProfileLayoutComponent,
-    ProfileRequestVacationPageComponent
+    ProfileRequestVacationPageComponent,
+    AmountDatePipe
   ],
   imports: [
     CommonModule,
