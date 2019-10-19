@@ -18,6 +18,8 @@ export class ProfileRequestVacationPageComponent implements OnInit {
       vacationDataFrom: new FormControl(),
       vacationDataTo: new FormControl()
     });
+    this.requestVacation.controls.vacationType.setValue('0', {onlySelf: true});
+    this.requestVacation.controls.vacationDataFrom.setValue(Date.now());
   }
 
   sendRequestVacation() {

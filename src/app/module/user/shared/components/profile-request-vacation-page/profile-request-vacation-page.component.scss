@@ -50,12 +50,18 @@
       font-size: 14px;
       line-height: 18px;
 
-      padding-left:35px;
+      padding-left:10px;
       box-sizing: border-box;
       background-color: rgba(255, 255, 255, 0.1);
       background-repeat:no-repeat;
       background-position: 10px 17px;
     }
 
+    button {
+      transition: 0.3s;
+      &:hover {
+        box-shadow: 0 0 5px 0 white;
+      }
+    }
   }
 }
