@@ -9,10 +9,11 @@
     <p class="text-big text-bold">My Profile</p>
   </div>
 
-  <form [formGroup]="requestVacation" (ngSubmit)="sendRequestVacation()">
+  <form [formGroup]="requestVacation">
     <div>
       <label>vacation type</label>
-      <select name="vacation_type">
+      <br/>
+      <select name="vacation_type" formControlName="vacationType">
         <option value="0" selected>Vacation</option>
         <option value="1">University</option>
       </select>
@@ -20,28 +21,37 @@
 
     <div>
       <label>comment</label>
-      <textarea name="message" rows="10" cols="30" placeholder="Enter your comment here"></textarea>
+      <br/>
+      <textarea
+        name="message"
+        rows="10" cols="30"
+        placeholder="Enter your comment here"
+        formControlName="vacationComment"
+      ></textarea>
     </div>
 
     <div>
       <label>from</label>
-      <input type="date">
+      <br/>
+      <input type="date" formControlName="vacationDataFrom">
     </div>
 
     <div>
       <label>to</label>
-      <input type="date">
+      <br/>
+      <input type="date" formControlName="vacationDataTo">
     </div>
 
     <div>
       <label>amount</label>
+      <br/>
       <div>
         <p>2</p>
         <p>days in vacation</p>
       </div>
     </div>
 
-    <button class="btn-cancel">CANCEL</button>
-    <button type="submit" class="btn-standart">SEND REQUEST</button>
+    <button class="btn-cancel" (click)="clickCancel()">CANCEL</button>
+    <button type="submit" class="btn-standart" (click)="sendRequestVacation()">SEND REQUEST</button>
   </form>
 </div>
