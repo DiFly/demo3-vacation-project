@@ -6,25 +6,37 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class AmountDatePipe implements PipeTransform {
 
   transform(value: string, ...args: any[]): any {
-    console.log(value, args);
     if (value === undefined || args.length === 0) {
       return null;
     }
     const from = value.split('/').map( n => +(n.trim()));
     const to = args[0].split('/').map( n => +(n.trim()));
-    console.log(from, ' ', to);
 
     function notNaN(array: any[]): boolean {
-        const verify = array.reduce((sum, current) => {
-          if (isNaN(current)) { return false; }
-        }, true);
-        return verify;
+      for (const t of array) {
+        if (isNaN(t)) {
+          return false;
+        }
+      }
+      return true;
     }
+    console.log(from, ' : ' , notNaN(from), ' | ', to, ' : ' , notNaN(to) );
+    if (notNaN(from) && notNaN(to) && from.length === 3 && to.length === 3) {
 
-    if (notNaN(from) || notNaN(to)) {
-      return 'text';
+      const dateFrom = new Date(from[2], (from[1] - 1), from[0]);
+      const dateTo = new Date(to[2], (to[1] - 1), to[0]);
+      const amountDay = (dateTo.valueOf() - dateFrom.valueOf()) / (1000 * 60 * 60 * 24);
+      console.log(dateFrom.toDateString());
+      console.log(amountDay);
+
+      if (amountDay < 0) {
+        return '0';
+      } else {
+        return amountDay;
+      }
+    } else {
+      return '0';
     }
-    return 'number';
   }
 
 }
