@@ -1,1 +1,107 @@
-<p>add-employee-page works!</p>
+<div class="edit-user_request br10">
+  <div class="title">
+    <p class="text-big text-bold">Edit Profile</p>
+  </div>
+
+  <form [formGroup]="editForm">
+    <!--    first group-->
+    <div class="block-first">
+
+      <div class="photo-img">
+        <img src="/assets/img/user.png">
+        <button type="file" class="input-file">EDIT PHOTO</button>
+      </div>
+
+      <div>
+        <label class="text-small">name</label>
+        <input type="text" placeholder="Name">
+      </div>
+      <div>
+        <label class="text-small">surname</label>
+        <input type="text" placeholder="Surname">
+      </div>
+      <div>
+        <label class="text-small">job title</label>
+        <select name="vacation_type">
+          <option value="0" selected>Job Title</option>
+          <option value="1">Other Title</option>
+        </select>
+      </div>
+      <div>
+        <label class="text-small">status</label>
+        <select name="vacation_type">
+          <option value="0" selected>Active</option>
+          <option value="1">Inactive</option>
+        </select>
+      </div>
+      <div>
+        <label class="text-small">days in vacation</label>
+        <input type="number" min="0" value="16" placeholder="Enter days">
+      </div>
+    </div>
+
+    <div class="second-block">
+      <div class="block-inner">
+        <div>
+          <label class="text-small">date of birth</label>
+          <input type="text" placeholder="XX/XX/XXXX">
+        </div>
+        <div>
+          <label class="text-small">personal mail</label>
+          <input type="text" placeholder="example@mail.com">
+        </div>
+        <div>
+          <label class="text-small">work mail</label>
+          <input type="text" placeholder="example@softheme.com">
+        </div>
+        <div>
+          <label class="text-small">phone number</label>
+          <input type="text" placeholder="+380 12 345 67 89">
+        </div>
+        <div>
+          <label class="text-small">skype</label>
+          <input type="text" placeholder="userskype">
+        </div>
+      </div>
+
+      <div class="block-inner">
+        <div>
+          <label class="text-small">hire date</label>
+          <input type="text" placeholder="XX/XX/XXXX">
+        </div>
+        <div>
+          <label class="text-small">date of dismissal</label>
+          <input type="text" placeholder="Not Chosen">
+        </div>
+
+
+        <div>
+          <label class="text-small">team name</label>
+          <select name="vacation_type">
+            <option value="0" selected>Team One</option>
+            <option value="1">Team Two</option>
+            <option value="2">Team Three</option>
+            <option value="3">Team Four</option>
+            <option value="4">Team Five</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-small">team leader</label>
+          <select name="vacation_type">
+            <option value="0" selected>Team Leader One</option>
+            <option value="1">Team Leader Two</option>
+            <option value="2">Team Leader Three</option>
+            <option value="3">Team Leader Four</option>
+            <option value="4">Team Leader Five</option>
+          </select>
+        </div>
+
+      </div>
+
+      <div class="button-block">
+        <button class="btn-cancel" (click)="cancel()">CANCEL</button>
+        <button type="submit" class="btn-standart" (click)="saveNewUser()">Done</button>
+      </div>
+    </div>
+  </form>
+</div>
