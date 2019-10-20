@@ -1,0 +1,164 @@
+
+.edit-user_request {
+  border: 1px solid var(--color-grey);
+  background-color: var(--color-darkgrey);
+  min-width: 1030px;
+
+  .title {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 30px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: var(--color-dark);
+  }
+
+  form {
+    width: 100%;
+    min-width: 800px;
+    border-top: 1px solid var(--color-grey);
+    box-sizing: border-box;
+
+    div {
+      &.block-first{
+        //border-right: 1px solid var(--color-grey);
+        padding: 30px 20px 10px 30px;
+        min-width: 220px;
+        width: 30%;
+        vertical-align: top;
+        display: inline-block;
+        min-height: 100%;
+
+        div {
+          margin-bottom: 25px;
+        }
+      }
+
+      &.second-block {
+        min-width: 650px;
+        width: 65%;
+        vertical-align: top;
+        box-sizing: border-box;
+        display: inline-block;
+        padding: 40px 30px 0px 30px;
+        border-left: 1px solid var(--color-grey);
+
+        div {
+          margin-bottom: 25px;
+        }
+
+        .block-inner {
+          .block-with-finding-members {
+            border: 1px solid var(--color-grey);
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+
+            .single-member {
+              width: 150px;
+              box-sizing: border-box;
+              margin: 5px;
+
+              border: 1px solid var(--color-blue);
+              border-radius: 5px;
+              transition: 0.3s;
+
+              &:hover {
+                box-shadow: 0 0 5px 0 var(--color-blue);
+              }
+
+              p {
+                width: 120px;
+                display: inline-block;
+                box-sizing: border-box;
+                text-align: center;
+                vertical-align: center;
+                padding-left: 10px;
+
+                white-space: nowrap; /* Запрещаем перенос строк */
+                overflow: hidden; /* Обрезаем все, что не помещается в область */
+                text-overflow: ellipsis; /* Добавляем многоточие */
+              }
+              & button {
+                display: inline-block;
+                background-color: inherit;
+                padding: 3px;
+                box-shadow: none;
+                height: 30px;
+
+                &:hover {
+                  transform: scale(1.5);
+                }
+              }
+
+            }
+          }
+
+
+        }
+
+        .found-members {
+          .found-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+
+            img{
+              height: 30px;
+              width: 30px;
+              margin-right: 10px;
+
+              border-radius: 50%;
+              display: inline-block;
+            }
+
+            P {
+              display: inline-block;
+            }
+          }
+        }
+      }
+
+
+      label {
+        margin-bottom: 3px;
+        color: var(--color-grey);
+        display: inline-block;
+        width: 100%;
+      }
+
+      input {
+        border: 0px;
+        width: 100%;
+        height: 45px;
+        border-radius: 5px;
+
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+
+        padding-left:10px;
+        box-sizing: border-box;
+        background-color: rgba(255, 255, 255, 0.1);
+        background-repeat:no-repeat;
+        background-position: 10px 17px;
+      }
+    }
+
+
+    .button-block {
+      //width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    button {
+      margin-right: 10px;
+      transition: 0.3s;
+      &:hover {
+        box-shadow: 0 0 5px 0 white;
+      }
+    }
+  }
+}
