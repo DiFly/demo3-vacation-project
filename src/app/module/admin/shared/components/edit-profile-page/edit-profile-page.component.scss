@@ -2,6 +2,7 @@
 .edit-user_request {
   border: 1px solid var(--color-grey);
   background-color: var(--color-darkgrey);
+  min-width: 1030px;
 
   .title {
     border-top-left-radius: 10px;
@@ -14,6 +15,7 @@
 
   form {
     width: 100%;
+    min-width: 800px;
     border-top: 1px solid var(--color-grey);
     box-sizing: border-box;
 
@@ -21,6 +23,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      width: 95%;
 
       img {
         height: 75px;
@@ -34,6 +37,7 @@
         color: #6d8cff;
         background-color: inherit;
         border: 1px solid #6d8cff;
+        margin-right: 0px;
         padding-left: 15px;
         padding-right: 15px;
       }
@@ -42,7 +46,7 @@
     div {
       &.block-first{
         border-right: 1px solid var(--color-grey);
-        padding: 30px 20px 30px 30px;
+        padding: 30px 20px 10px 30px;
         min-width: 220px;
         width: 30%;
         vertical-align: top;
@@ -67,15 +71,21 @@
       }
 
       &.second-block {
-        min-width: 400px;
-        width: 60%;
+        min-width: 650px;
+        width: 65%;
         vertical-align: top;
         margin-bottom: 10px;
         box-sizing: border-box;
         display: inline-block;
+        padding: 40px 0px 0px 30px;
+
+        div {
+          margin-bottom: 25px;
+        }
 
         .block-inner {
-          width: 45%;
+          display: inline-block;
+          width: 50%;
         }
       }
 
