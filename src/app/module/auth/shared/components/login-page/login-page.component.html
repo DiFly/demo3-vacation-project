@@ -2,14 +2,14 @@
   <input type="text" placeholder="email" class="email" formControlName="email">
   <div class="error-block">
     <div *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">
-      <small class="text-small " *ngIf="loginForm.get('email').errors.required && loginForm.get('email').touched">Field is not be empty. </small>
+      <small class="text-small " *ngIf="loginForm.get('email').errors.required && loginForm.get('email').touched">Email required. </small>
       <small class="text-small" *ngIf="loginForm.get('email').touched && loginForm.get('email').errors.email">It's not a valid email. </small>
     </div>
   </div>
   <input type="password" placeholder="password" class="password" formControlName="password">
   <div class="error-block">
     <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">
-      <small class="text-small" *ngIf="loginForm.get('password').errors.required && loginForm.get('password').touched">Field is not be empty. </small>
+      <small class="text-small" *ngIf="loginForm.get('password').errors.required && loginForm.get('password').touched">Password required. </small>
       <small class="text-small" *ngIf="loginForm.get('password').touched && loginForm.get('password').errors.minlength">Must be more char in this field. </small>
     </div>
 <!--    <small *ngIf="serverBadPassword && loginForm.get('password').untouched">Wrong password. Please, try again!</small>-->
