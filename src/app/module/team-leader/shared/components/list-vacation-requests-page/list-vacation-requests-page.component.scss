@@ -1,0 +1,118 @@
+
+.current-user_vacations {
+  border: 1px solid var(--color-grey);
+  background-color: var(--color-darkgrey);
+
+  .title {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 30px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background-color: var(--color-dark);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead  {
+      border-top: 1px solid #878787;
+      border-bottom: 1px solid #878787;
+      tr{
+        height: 35px;
+        th {
+          color: var(--color-grey);
+        }
+      }
+
+    }
+
+    tbody tr{
+      height: 35px;
+      border-top: 1px solid #878787;
+
+      th{
+        &.name {
+          font-weight: 400;
+        }
+        &.team {
+          color: var(--color-grey);
+          font-weight: 400;
+        }
+        &.dates {
+          color: var(--color-grey);
+          font-weight: 400;
+        }
+        &.amount {
+          color: var(--color-grey);
+          font-weight: 400;
+        }
+        &.balance {
+          font-weight: 400;
+        }
+        &.x {
+          padding-right: 10px;
+
+          span {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            box-sizing: border-box;
+
+            &.unconfirmed {
+              background: linear-gradient(90deg, #667EEA 0%, #764BA2 100%);
+            }
+            &.approve {
+              background: linear-gradient(90deg, #66EACA 0%, #00FFA9 100%);
+            }
+            &.refuse {
+              background: linear-gradient(90deg, #EA6676 0%, #FF0054 100%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.pagination {
+  margin-top: 35px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .pagination-url{
+    margin-right: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--color-darkgrey);
+    color: var(--color-grey);
+
+    a {
+      width: 15px;
+      color: var(--color-grey);
+
+      &.active {
+        color: white;
+      }
+    }
+  }
+
+  .next {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      color: var(--color-grey);
+      margin-right: 5px;
+    }
+  }
+}
