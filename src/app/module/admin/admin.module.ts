@@ -8,6 +8,7 @@ import { AddTeamPageComponent } from './shared/components/add-team-page/add-team
 import { EditTeamPageComponent } from './shared/components/edit-team-page/edit-team-page.component';
 import { ListTeamPageComponent } from './shared/components/list-team-page/list-team-page.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ViewTeamProfilePageComponent } from './shared/components/view-team-profile-page/view-team-profile-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AddEmployeePageComponent,
     AddTeamPageComponent,
     EditTeamPageComponent,
-    ListTeamPageComponent
+    ListTeamPageComponent,
+    ViewTeamProfilePageComponent
   ],
   imports: [
     CommonModule,
