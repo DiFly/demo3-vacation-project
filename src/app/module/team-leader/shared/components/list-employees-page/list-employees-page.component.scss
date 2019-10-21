@@ -9,6 +9,25 @@
     padding-top: 11px;
     padding-bottom: 11px;
     background-color: var(--color-dark);
+    padding-right: 5px;
+
+    display: flex;
+    justify-content: space-between;
+
+    .filter-block {
+      input, select {
+        width: 150px;
+        height: 30px;
+        border: none;
+
+        box-sizing: border-box;
+        padding-left: 5px;
+        margin-right: 10px;
+
+        background: #2E2E2E;
+        border-radius: 3px;
+      }
+    }
   }
 
   table {
@@ -22,6 +41,13 @@
         height: 35px;
         th {
           color: var(--color-grey);
+
+          &.left-align {
+            text-align: left;
+          }
+          &.right-align {
+            text-align: right;
+          }
         }
       }
 
@@ -31,7 +57,20 @@
       height: 35px;
       border-top: 1px solid #878787;
 
-      th{
+      td {
+        text-align: center;
+
+        &.flag {
+          width: 30px;
+        }
+
+        &.left-align {
+          text-align: left;
+        }
+        &.right-align {
+          text-align: right;
+        }
+
         &.team {
           font-weight: 600;
         }
