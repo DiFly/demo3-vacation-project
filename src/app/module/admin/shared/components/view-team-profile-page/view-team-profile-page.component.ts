@@ -12,4 +12,7 @@ export class ViewTeamProfilePageComponent implements OnInit {
   ngOnInit() {
   }
 
+  close() {
+    alert('Click CLOSE');
+  }
 }
