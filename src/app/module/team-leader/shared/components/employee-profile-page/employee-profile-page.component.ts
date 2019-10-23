@@ -12,4 +12,7 @@ export class EmployeeProfilePageComponent implements OnInit {
   ngOnInit() {
   }
 
+  close() {
+    alert('Click CLOSE button');
+  }
 }
