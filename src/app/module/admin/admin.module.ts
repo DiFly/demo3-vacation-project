@@ -28,7 +28,7 @@ import { ViewTeamProfilePageComponent } from './shared/components/view-team-prof
       {path: 'edit-employee/:id', component: EditProfilePageComponent},
       {path: 'edit-team/:id', component: EditTeamPageComponent},
       {path: 'team-list', component: ListTeamPageComponent},
-      {path: 'team-list/profile-view/:id', component: ViewTeamProfilePageComponent}
+      {path: 'team-list/team-profile/:id', component: ViewTeamProfilePageComponent}
     ]),
     FormsModule,
     ReactiveFormsModule
