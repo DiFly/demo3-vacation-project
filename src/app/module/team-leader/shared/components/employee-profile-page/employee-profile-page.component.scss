@@ -50,6 +50,7 @@
 
       &.second-block {
         min-width: 650px;
+        min-height: 366px;
         width: 65%;
         vertical-align: top;
         box-sizing: border-box;
@@ -63,7 +64,7 @@
           flex-basis: 250px;
 
           .width-250 {
-            width: 250px;
+            width: 50%;
           }
         }
 

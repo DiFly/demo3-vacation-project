@@ -1,3 +1,10 @@
+import {Team} from './team-model';
+
+export enum UserStatus {
+  Active,
+  Dissmiss
+}
+
 export class User {
   id: string;
   firstname: string;
@@ -8,6 +15,9 @@ export class User {
   phone: string;
   skype: string;
   datestart: Date;
+  status: UserStatus;
   dateend?: Date;
-  team?: any;
+  team?: Team;
+
+  daysavailable?: number;
 }
