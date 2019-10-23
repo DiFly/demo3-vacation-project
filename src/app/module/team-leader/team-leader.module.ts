@@ -5,19 +5,22 @@ import {RouterModule} from '@angular/router';
 import { ListVacationRequestsPageComponent } from './shared/components/list-vacation-requests-page/list-vacation-requests-page.component';
 import { TeamCalendarPageComponent } from './shared/components/team-calendar-page/team-calendar-page.component';
 import { ListEmployeesPageComponent } from './shared/components/list-employees-page/list-employees-page.component';
+import { EmployeeProfilePageComponent } from './shared/components/employee-profile-page/employee-profile-page.component';
 
 @NgModule({
   declarations: [
     ListVacationRequestsPageComponent,
     TeamCalendarPageComponent,
-    ListEmployeesPageComponent
+    ListEmployeesPageComponent,
+    EmployeeProfilePageComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild([
       {path: '', redirectTo: '/team/vacation-requests', pathMatch: 'full'},
       {path: 'vacation-requests', component: ListVacationRequestsPageComponent},
-      {path: 'list-employees', component: ListEmployeesPageComponent},
+      {path: 'employees-list', component: ListEmployeesPageComponent},
+      {path: 'employees-list/employee-profile/:id', component: EmployeeProfilePageComponent},
       {path: 'calendar', component: TeamCalendarPageComponent}
     ])
   ],
