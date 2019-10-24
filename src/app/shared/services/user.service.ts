@@ -1,11 +1,16 @@
 import { Injectable } from '@angular/core';
 import {User} from '../models/user-model';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-  currentUser: User;
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+  }
+
+  getCurrentUser() {
+    return this.http.get<User>('http://localhost:8080/user-details/10');
+  }
 }

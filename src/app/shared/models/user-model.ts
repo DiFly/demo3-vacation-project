@@ -2,13 +2,13 @@ import {Team} from './team-model';
 
 export enum UserStatus {
   Active,
-  Dissmiss
+  Dismiss
 }
 
 export enum UserPosition {
   'Admin',
-  'Team Leader',
-  'Account Manager'
+  'TeamLeader',
+  'AccountManager'
 }
 
 export class User {
