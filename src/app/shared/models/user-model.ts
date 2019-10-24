@@ -5,8 +5,15 @@ export enum UserStatus {
   Dissmiss
 }
 
+export enum UserPosition {
+  'Admin',
+  'Team Leader',
+  'Account Manager'
+}
+
 export class User {
   id: string;
+  position: UserPosition;
   firstname: string;
   surname: string;
   userpic?: string;
