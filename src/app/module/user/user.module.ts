@@ -8,6 +8,7 @@ import { ProfileLayoutComponent } from './shared/components/profile-layout/profi
 import { ProfileRequestVacationPageComponent } from './shared/components/profile-request-vacation-page/profile-request-vacation-page.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AmountDatePipe } from './shared/pipes/amount-date.pipe';
+import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
   declarations: [ProfileViewPageComponent,
@@ -27,7 +28,8 @@ import { AmountDatePipe } from './shared/pipes/amount-date.pipe';
       }
     ]),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ],
   exports: [
     RouterModule

@@ -8,8 +8,8 @@
     <div class="user-title">
       <img src="/assets/img/random-user_imageF39.png">
       <div class="user-title_inform">
-        <h3 class="text-big">User Name</h3>
-        <p class="text-middle">Account Manager</p>
+        <h3 class="text-big">{{currentUser.firstname}}  {{currentUser.surname}}</h3>
+        <p class="text-middle">{{currentUser.position | userPosition}}</p>
         <p><span class="green-round"></span> active</p>
 <!--        <p><span class="red-round"></span> inactive</p>-->
       </div>

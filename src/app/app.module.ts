@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { LeftNavBarComponent } from './shared/components/left-nav-bar/left-nav-bar.component';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,10 @@ import { LeftNavBarComponent } from './shared/components/left-nav-bar/left-nav-b
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

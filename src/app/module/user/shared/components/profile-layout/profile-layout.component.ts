@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {UserService} from '../../../../../shared/services/user.service';
-import {User, UserPosition, UserStatus} from '../../../../../shared/models/user-model';
-import {Observable} from 'rxjs';
-import {Team} from '../../../../../shared/models/team-model';
-import {map, tap} from 'rxjs/operators';
+import {User} from '../../../../../shared/models/user-model';
+import {tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile-layout',
@@ -14,28 +12,35 @@ import {map, tap} from 'rxjs/operators';
 export class ProfileLayoutComponent implements OnInit {
   currentUser: User;
 
-  constructor(private userservice: UserService) { }
+  constructor(private userservice: UserService) {
+    this.currentUser = {
+      firstname: 'Name',
+      surname: 'Surname',
+      dateend: undefined,
+      datestart: undefined,
+      daysavailable: 0,
+      emailself: '',
+      emailwork: '',
+      id: '',
+      phone: '',
+      position: undefined,
+      skype: '',
+      status: undefined,
+      team: undefined,
+      userpic: '',
+    };
+  }
 
   ngOnInit() {
     this.userservice.getCurrentUser().pipe(
       tap(ev => console.log(ev))
     ).subscribe(
-
-
-      // (data: User) => this.currentUser = {
-      //   id: data.id,
-      //   position: data.position,
-      //   firstname: data.firstname,
-      //   surname: data.surname,
-      //   userpic: data.userpic,
-      //   emailself: data.emailself,
-      //   emailwork: data.emailwork,
-      //   phone: data.phone,
-      //   skype: data.skype,
-      //   datestart: data.datestart,
-      //   status: data.status,
-      //   daysavailable: data.daysavailable
-      // }
+      responce => {
+        this.currentUser = responce;
+      },
+      error => {
+        console.log(error);
+      }
     );
   }
 

@@ -6,9 +6,9 @@ export enum UserStatus {
 }
 
 export enum UserPosition {
-  'Admin',
-  'TeamLeader',
-  'AccountManager'
+  Admin,
+  TeamLeader,
+  AccountManager
 }
 
 export class User {
