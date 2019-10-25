@@ -6,19 +6,25 @@
     </div>
 
     <div class="user-title">
-      <img src="/assets/img/random-user_imageF39.png">
+      <img *ngIf="currentUser.userpic" src="{{currentUser.userpic}}">
+      <ng-template #nonUserImage>
+        <img src="/assets/img/random-user_imageF39.png">
+      </ng-template>
+
       <div class="user-title_inform">
         <h3 class="text-big">{{currentUser.firstname}}  {{currentUser.surname}}</h3>
         <p class="text-middle">{{currentUser.position | userPosition}}</p>
-        <p><span class="green-round"></span> active</p>
-<!--        <p><span class="red-round"></span> inactive</p>-->
+        <p *ngIf="currentUser.status === 0; else inActive"><span class="green-round"></span> {{currentUser.status }}</p>
+        <ng-template #inActive>
+          <p><span class="red-round"></span> inactive</p>
+        </ng-template>
       </div>
     </div>
 
     <div>
       <div class="simple-inform-block">
         <p class="text-small">date od birth</p>
-        <p class="text-middle">11 January 1994</p>
+        <p class="text-middle">{{currentUser.datestart | date}}</p>
       </div>
       <div class="simple-inform-block">
         <p class="text-small">personal email</p>
