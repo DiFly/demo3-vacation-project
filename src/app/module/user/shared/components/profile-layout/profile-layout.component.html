@@ -14,7 +14,7 @@
       <div class="user-title_inform">
         <h3 class="text-big">{{currentUser.firstname}}  {{currentUser.surname}}</h3>
         <p class="text-middle">{{currentUser.position | userPosition}}</p>
-        <p *ngIf="currentUser.status === 0; else inActive"><span class="green-round"></span> {{currentUser.status }}</p>
+        <p *ngIf="currentUser.status === 0; else inActive"><span class="green-round"></span> active</p>
         <ng-template #inActive>
           <p><span class="red-round"></span> inactive</p>
         </ng-template>
@@ -24,35 +24,48 @@
     <div>
       <div class="simple-inform-block">
         <p class="text-small">date od birth</p>
-        <p class="text-middle">{{currentUser.datestart | date}}</p>
+        <p class="text-middle">{{currentUser.birthday | date: 'd MMMM yyyy'}}</p>
       </div>
       <div class="simple-inform-block">
         <p class="text-small">personal email</p>
-        <p class="text-middle">personal@mail.com</p>
+        <p class="text-middle">{{currentUser.emailself}}</p>
       </div>
       <div class="simple-inform-block">
         <p class="text-small">work email</p>
-        <p class="text-middle">work@email.com</p>
+        <p class="text-middle">{{currentUser.emailwork}}</p>
       </div>
       <div class="simple-inform-block">
         <p class="text-small">phone number</p>
-        <p class="text-middle">+380 12 345 67 89</p>
+        <p class="text-middle">{{currentUser.phone | phoneNumber}}</p>
       </div>
       <div class="simple-inform-block">
         <p class="text-small">skype</p>
-        <p class="text-middle">user.skype</p>
+        <p class="text-middle">{{currentUser.skype}}</p>
       </div>
       <div class="simple-inform-block">
         <p class="text-small">hire date</p>
-        <p class="text-middle">11 January 2011 - Nowadays</p>
+        <p class="text-middle">{{currentUser.datestart | date: 'd MMMM yyyy'}} -
+          <span *ngIf="currentUser.dateend; else noDateEnd">{{currentUser.dateend | date: 'd MMMM yyyy'}}</span>
+          <ng-template #noDateEnd>
+            <span>Nowadays</span>
+          </ng-template>
+        </p>
       </div>
       <div class="simple-inform-block">
         <p class="text-small">team name</p>
-        <p class="text-middle">Finder Team</p>
+        <p class="text-middle"*ngIf="currentUser.team; else noTeam">{{currentUser.team.name}}</p>
+        <ng-template #noTeam>
+          <p class="text-middle">No Team</p>
+        </ng-template>
       </div>
       <div class="simple-inform-block">
         <p class="text-small">team leader</p>
-        <p class="text-middle">Fred Barnes</p>
+        <p class="text-middle" *ngIf="currentUser.team; else noTeamLeader">
+          {{currentUser.team.leader.firstname}} {{currentUser.team.leader.surname}}
+        </p>
+        <ng-template #noTeamLeader>
+          <p class="text-middle">No Team Leader</p>
+        </ng-template>
       </div>
     </div>
 

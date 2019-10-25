@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../../services/user.service';
+
+interface ShortDetails {
+  userName: string;
+  userPic: '/assets/img/random-user_imageF39.png';
+  userId: string;
+}
 
 @Component({
   selector: 'app-header',
@@ -7,7 +14,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private userservice: UserService) { }
 
   ngOnInit() {
   }

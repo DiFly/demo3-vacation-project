@@ -33,7 +33,7 @@ export class ProfileLayoutComponent implements OnInit {
 
   ngOnInit() {
     this.userservice.getCurrentUser().pipe(
-      tap(ev => console.log(ev))
+      // tap(ev => console.log(ev))
     ).subscribe(
       responce => {
         this.currentUser = responce;

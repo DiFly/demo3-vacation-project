@@ -21,6 +21,7 @@ export class User {
   emailwork: string;
   phone: string;
   skype: string;
+  birthday?: Date;
   datestart: Date;
   status: UserStatus;
   dateend?: Date;

@@ -41,6 +41,13 @@
         vertical-align: top;
         padding-top: 40px;
 
+        .text-big {
+          width: 160px;
+          //white-space: pre-wrap;
+          //white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+          word-wrap: break-word;
+        }
+
         .green-round {
           display: inline-block;
           height: 8px;
