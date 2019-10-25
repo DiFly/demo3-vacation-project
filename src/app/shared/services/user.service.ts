@@ -10,10 +10,18 @@ export class UserService {
   private currentUser: User;
 
   constructor(private http: HttpClient) {
+    this.getUser(10).subscribe(
+      responce => {
+        this.currentUser = responce;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
   getCurrentUser() {
-    return this.getUser(10);
+    return this.currentUser;
   }
 
   getUser(id: number) {

@@ -27,21 +27,12 @@ export class ProfileLayoutComponent implements OnInit {
       skype: '',
       status: undefined,
       team: undefined,
-      userpic: '',
+      userpic: '/assets/img/random-user_imageF39.png',
     };
   }
 
   ngOnInit() {
-    this.userservice.getCurrentUser().pipe(
-      // tap(ev => console.log(ev))
-    ).subscribe(
-      responce => {
-        this.currentUser = responce;
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    this.currentUser = this.userservice.getCurrentUser();
   }
 
 }

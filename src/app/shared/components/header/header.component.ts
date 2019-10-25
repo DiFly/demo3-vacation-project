@@ -14,7 +14,6 @@ interface ShortDetails {
 })
 export class HeaderComponent implements OnInit {
 
-
   constructor(private userservice: UserService) { }
 
   ngOnInit() {

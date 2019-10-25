@@ -6,7 +6,7 @@
     </div>
 
     <div class="user-title">
-      <img *ngIf="currentUser.userpic" src="{{currentUser.userpic}}">
+      <img *ngIf="currentUser.userpic; else nonUserImage" src="{{currentUser.userpic}}">
       <ng-template #nonUserImage>
         <img src="/assets/img/random-user_imageF39.png">
       </ng-template>
