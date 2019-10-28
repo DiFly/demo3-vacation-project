@@ -27,7 +27,7 @@ import {AvailableDaysService} from './shared/services/available-days.service';
         path: '', component: ProfileLayoutComponent, children: [
           {path: '', redirectTo: '/profile/view', pathMatch: 'full'},
           {path: 'view', component: ProfileViewPageComponent},
-          {path: 'request-vacation', component: ProfileRequestVacationPageComponent}
+          {path: 'request-vacation/:id', component: ProfileRequestVacationPageComponent}
         ]
       }
     ]),
