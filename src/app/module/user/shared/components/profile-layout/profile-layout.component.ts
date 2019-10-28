@@ -32,7 +32,14 @@ export class ProfileLayoutComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.currentUser = this.userservice.getCurrentUser();
+    this.userservice.getCurrentUser().subscribe(
+      response => {
+        this.currentUser = response;
+      },
+      error => {
+        console.log(error);
+      }
+    );;
   }
 
 }

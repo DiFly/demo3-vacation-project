@@ -9,12 +9,16 @@ import { ProfileRequestVacationPageComponent } from './shared/components/profile
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AmountDatePipe } from './shared/pipes/amount-date.pipe';
 import {SharedModule} from '../../shared/shared.module';
+import {AvailableDaysService} from './shared/services/available-days.service';
 
 @NgModule({
   declarations: [ProfileViewPageComponent,
     ProfileLayoutComponent,
     ProfileRequestVacationPageComponent,
     AmountDatePipe
+  ],
+  providers: [
+    AvailableDaysService
   ],
   imports: [
     CommonModule,
