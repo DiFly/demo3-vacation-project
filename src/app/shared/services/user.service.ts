@@ -17,6 +17,8 @@ export class UserService {
     return this.getUser(10);
   }
 
+  // https://test-heroku-app-rest.herokuapp.com/user-details/10
+
   getUser(id: number): Observable<User> {
     return this.http.get<User>(`http://localhost:8080/user-details/${id}`).pipe(
       map( data => {
