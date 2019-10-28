@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {UserService} from '../../../../../shared/services/user.service';
-import {User, UserStatus} from '../../../../../shared/models/user-model';
-import {tap} from 'rxjs/operators';
+import {User} from '../../../../../shared/models/user-model';
 
 @Component({
   selector: 'app-profile-layout',
@@ -21,7 +20,7 @@ export class ProfileLayoutComponent implements OnInit {
       daysavailable: 0,
       emailself: '',
       emailwork: '',
-      id: '',
+      id: 0,
       phone: '',
       position: undefined,
       skype: '',
@@ -39,7 +38,7 @@ export class ProfileLayoutComponent implements OnInit {
       error => {
         console.log(error);
       }
-    );;
+    );
   }
 
 }

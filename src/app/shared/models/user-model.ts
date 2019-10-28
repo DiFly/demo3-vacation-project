@@ -12,7 +12,7 @@ export enum UserPosition {
 }
 
 export class User {
-  id: string;
+  id: number;
   position: UserPosition;
   firstname: string;
   surname: string;

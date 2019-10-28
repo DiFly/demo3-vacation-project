@@ -6,11 +6,11 @@
 
   <nav>
     <div routerLinkActive="active-link"><a class="text-big" routerLink="/profile/view" routerLinkActive="active-link"><span>My Profile</span></a></div>
-    <div routerLinkActive="active-link"><a class="text-big" routerLink="/profile/request-vacation" routerLinkActive="active-link"><span>Request Vacation</span></a></div>
+    <div routerLinkActive="active-link"><a class="text-big" routerLink="/profile/request-vacation/{{simpleUser.userId}}" routerLinkActive="active-link"><span>Request Vacation</span></a></div>
   </nav>
 
   <div class="block-user">
-    <p class="text-middle-plus">User Name</p>
-    <img src="/assets/img/random-user_imageF39.png">
+    <p class="text-middle-plus">{{simpleUser.userName}}</p>
+    <img src="{{simpleUser.userPic}}">
   </div>
 </header>
