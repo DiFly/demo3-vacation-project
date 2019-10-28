@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../models/user-model';
 import {UserService} from '../../services/user.service';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 
 @Component({
   selector: 'app-main-layout',
@@ -9,8 +9,8 @@ import {Observable} from 'rxjs';
   styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent implements OnInit {
-  // currentUser: Observable<User>;
-  currentUser: User;
+  currentUser: Observable<User>;
+  // currentUser: User;
 
   constructor(private userservice: UserService) {
     // this.currentUser = {
@@ -32,7 +32,7 @@ export class MainLayoutComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userservice.getCurrentUser().subscribe(
+    of<User>(this.userservice.getCurrentUser()).subscribe(
       response => {
         this.currentUser = response;
       },
