@@ -2,14 +2,16 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
+import {SharedModule} from '../../shared/shared.module';
 import { ProfileViewPageComponent } from './shared/components/profile-view-page/profile-view-page.component';
 import { ProfileLayoutComponent } from './shared/components/profile-layout/profile-layout.component';
 import { ProfileRequestVacationPageComponent } from './shared/components/profile-request-vacation-page/profile-request-vacation-page.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 import { AmountDatePipe } from './shared/pipes/amount-date.pipe';
-import {SharedModule} from '../../shared/shared.module';
 import {AvailableDaysService} from './shared/services/available-days.service';
+import {VacationListOfSingleUserService} from './shared/services/vacation-list-of-single-user.service';
 
 @NgModule({
   declarations: [ProfileViewPageComponent,
@@ -18,7 +20,8 @@ import {AvailableDaysService} from './shared/services/available-days.service';
     AmountDatePipe
   ],
   providers: [
-    AvailableDaysService
+    AvailableDaysService,
+    VacationListOfSingleUserService
   ],
   imports: [
     CommonModule,
