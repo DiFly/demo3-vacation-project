@@ -32,14 +32,11 @@ export class MainLayoutComponent implements OnInit {
   }
 
   ngOnInit() {
-    of<User>(this.userservice.getCurrentUser()).subscribe(
-      response => {
-        this.currentUser = response;
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    this.currentUser = this.getCurrentUser();
+  }
+
+  getCurrentUser(): Observable<User> {
+    return this.userservice.getCurrentUser();
   }
 
 }
