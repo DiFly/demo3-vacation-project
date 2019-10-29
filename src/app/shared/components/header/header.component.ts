@@ -19,7 +19,7 @@ interface ShortDetails {
 })
 export class HeaderComponent implements OnInit {
   @Input() currentUser: Observable<User>;
-  simpleUser: Observable<ShortDetails>;
+  simpleUser;
 
   constructor() {
     // this.simpleUser = {
@@ -30,12 +30,13 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.currentUser);
     // this.simpleUser = {
     //   userName: (this.currentUser.firstname + ' ' + this.currentUser.surname),
     //   userId: this.currentUser.id,
     //   userPic: this.currentUser.userpic
     // };
-    this.simpleUser = this.currentUser.pipe(
+    this.currentUser.pipe(
       map(data => {
           const shortUser: ShortDetails = {
             userName: (data.firstname + ' ' + data.surname),
@@ -45,7 +46,9 @@ export class HeaderComponent implements OnInit {
           return shortUser;
         }
       )
-    );
+    ).subscribe(data => {
+      this.simpleUser = data;
+    });
   }
 
 }
