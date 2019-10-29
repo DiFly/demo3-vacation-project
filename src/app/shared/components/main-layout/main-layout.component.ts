@@ -9,7 +9,7 @@ import {Observable, of} from 'rxjs';
   styleUrls: ['./main-layout.component.scss']
 })
 export class MainLayoutComponent implements OnInit {
-  currentUser: Observable<User>;
+  currentUser;
   // currentUser: User;
 
   constructor(private userservice: UserService) {
@@ -32,11 +32,16 @@ export class MainLayoutComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.currentUser = this.getCurrentUser();
+    // this.currentUser = this.getCurrentUser();
+    this.userservice.user$.subscribe( user => {
+      this.currentUser = user;
+      console.log('main-layout', this.currentUser);
+    });
+    this.getCurrentUser();
   }
 
-  getCurrentUser(): Observable<User> {
-    return this.userservice.getCurrentUser();
+  getCurrentUser() {
+    this.userservice.getCurrentUser();
   }
 
 }
