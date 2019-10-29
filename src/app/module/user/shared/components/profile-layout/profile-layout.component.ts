@@ -11,7 +11,7 @@ import {User} from '../../../../../shared/models/user-model';
 export class ProfileLayoutComponent implements OnInit {
   currentUser: User;
 
-  constructor(private userservice: UserService) {
+  constructor(private userService: UserService) {
     this.currentUser = {
       firstname: 'Name',
       surname: 'Surname',
@@ -31,16 +31,10 @@ export class ProfileLayoutComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.userservice.getCurrentUser().subscribe(
-    //   response => {
-    //     this.currentUser = response;
-    //   },
-    //   error => {
-    //     console.log(error);
-    //   }
-    // );
-
-    // this.userservice.getCurrentUser()
+    this.userService.user$.subscribe( user => {
+      this.currentUser = user;
+      console.log('header-layout onInit', this.currentUser);
+    });
   }
 
 }

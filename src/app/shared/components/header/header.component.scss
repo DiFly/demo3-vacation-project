@@ -51,7 +51,10 @@ nav {
   }
 
   & img {
-    height: 44px;
+    width: 44px;
+    max-height: 44px;
+    object-fit: cover;
+    //box-sizing: content-box;
     margin-left: 5px;
     margin-right: 5px;
     border-radius: 50%;

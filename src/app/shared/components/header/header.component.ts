@@ -10,7 +10,6 @@ import {UserService} from '../../services/user.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, OnChanges {
-  // @Input() currentUser;
   currentUser: User;
 
   constructor(private userService: UserService) {
@@ -21,6 +20,7 @@ export class HeaderComponent implements OnInit, OnChanges {
       this.currentUser = user;
       console.log('header-layout onInit', this.currentUser);
     });
+    this.userService.getCurrentUser();
   }
 
   ngOnChanges() {

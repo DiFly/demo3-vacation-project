@@ -5,8 +5,8 @@ import {AvailableDays} from '../models/available-days.model';
 
 @Injectable()
 export class AvailableDaysService {
-  // private apiUrl = 'http://localhost:8080/user-days-available/';
-  private apiUrl = 'https://test-heroku-app-rest.herokuapp.com/user-days-available/';
+  private apiUrl = 'http://localhost:8080/user-days-available/';
+  // private apiUrl = 'https://test-heroku-app-rest.herokuapp.com/user-days-available/';
 
   constructor(private http: HttpClient) { }
 

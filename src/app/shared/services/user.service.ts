@@ -8,8 +8,8 @@ import {Observable, Subject} from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
-  // private apiURL = 'http://localhost:8080/user-details/';
-  private apiURL = 'https://test-heroku-app-rest.herokuapp.com/user-details/';
+  private apiURL = 'http://localhost:8080/user-details/';
+  // private apiURL = 'https://test-heroku-app-rest.herokuapp.com/user-details/';
   private currentUser: User;
   private userSubject = new Subject<User>();
   public user$ = this.userSubject.asObservable();
@@ -28,7 +28,6 @@ export class UserService {
     );
   }
 
-  // https://test-heroku-app-rest.herokuapp.com/user-details/10
 
   getUser(id: number): Observable<User> {
     return this.http.get<User>(`${this.apiURL}${id}`).pipe(
