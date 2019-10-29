@@ -8,6 +8,8 @@ import {Observable} from 'rxjs';
   providedIn: 'root',
 })
 export class UserService {
+  // private apiURL = 'http://localhost:8080/user-details/';
+  private apiURL = 'https://test-heroku-app-rest.herokuapp.com/user-details/';
   private currentUser: User;
 
   constructor(private http: HttpClient) {
@@ -20,7 +22,7 @@ export class UserService {
   // https://test-heroku-app-rest.herokuapp.com/user-details/10
 
   getUser(id: number): Observable<User> {
-    return this.http.get<User>(`http://localhost:8080/user-details/${id}`).pipe(
+    return this.http.get<User>(`${this.apiURL}${id}`).pipe(
       map( data => {
         let tmp: any = data.position;
         switch (tmp) {
