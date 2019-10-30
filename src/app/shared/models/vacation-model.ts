@@ -1,7 +1,7 @@
 export enum VacationStatus {
+  Unconfirmed,
   Approve,
-  Refuse,
-  Unconfirmed
+  Refuse
 }
 
 export class Vacation {

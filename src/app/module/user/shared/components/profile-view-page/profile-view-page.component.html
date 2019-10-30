@@ -39,9 +39,14 @@
         <th class="balance text-middle">05 days</th>
       </tr>
       <tr *ngFor="let vacation of vacations">
-        <th class="dates text-middle">{{vacation.startDate}} - {{vacation.endDate}}</th>
+        <th class="dates text-middle">{{vacation.startDate | date: 'd MMM yyyy' }} - {{vacation.endDate | date: 'd MMM yyyy' }}</th>
         <th class="description text-middle">Vacation</th>
-        <th class="status text-middle denied">Denied</th>
+        <th class="status text-middle"
+            [ngClass]='{
+              denied: vacation.status === 2,
+              approved: vacation.status === 1
+            }'
+        >Denied</th>
         <th class="balance text-middle">05 days</th>
       </tr>
     </tbody>
