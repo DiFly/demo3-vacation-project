@@ -20,25 +20,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th class="dates text-middle">15 Jun 18 - 20 Jun 2018 </th>
-        <th class="description text-middle">Vacation</th>
-        <th class="status text-middle approved">Approved</th>
-        <th class="balance text-middle">05 days</th>
-      </tr>
-      <tr>
-        <th class="dates text-middle">15 Jun 18 - 20 Jun 2018 </th>
-        <th class="description text-middle">University</th>
-        <th class="status text-middle approved">Approved</th>
-        <th class="balance text-middle">05 days</th>
-      </tr>
-      <tr>
-        <th class="dates text-middle">15 Jun 18 - 20 Jun 2018 </th>
-        <th class="description text-middle">Vacation</th>
-        <th class="status text-middle denied">Denied</th>
-        <th class="balance text-middle">05 days</th>
-      </tr>
-      <tr *ngFor="let vacation of vacations">
+        <tr *ngFor="let vacation of vacations">
         <th class="dates text-middle">{{vacation.startDate | date: 'd MMM yyyy' }} - {{vacation.endDate | date: 'd MMM yyyy' }}</th>
         <th class="description text-middle">Vacation</th>
         <th class="status text-middle"
@@ -46,7 +28,10 @@
               denied: vacation.status === 2,
               approved: vacation.status === 1
             }'
-        >Denied</th>
+        >
+<!--          ToDo Bad code, change to pipe-->
+          {{vacation.status === 0 ? 'Unconfirmed' : vacation.status === 1 ? 'Approved' : 'Denied'}}
+        </th>
         <th class="balance text-middle">05 days</th>
       </tr>
     </tbody>
