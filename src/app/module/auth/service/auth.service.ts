@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import {environment} from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class AuthService {
     formData.append('client_secret', 'vacationsecrets');
     formData.append('grant_type', 'password');
 
-    return this.http.post('https://vacations.polytech.rocks:52538/connect/token', formData)
+    return this.http.post(environment.API_URL2 + 'connect/token', formData)
       .pipe(map((response) => {
         console.log('SingIn(): ', response);
         sessionStorage.setItem('auth_token', response['access_token']);
