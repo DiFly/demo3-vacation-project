@@ -1,14 +1,18 @@
 import {Injectable} from '@angular/core';
-import {User, UserPosition, UserStatus} from '../models/user-model';
 import {HttpClient} from '@angular/common/http';
-import {map} from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 import {Observable, Subject} from 'rxjs';
+import jwt_decode from 'jwt-decode';
+
+
+import {environment} from '../../../environments/environment';
+import {User, UserPosition, UserStatus} from '../models/user-model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private apiURL = 'http://localhost:8080/user-details/';
+  private apiURL = environment.API_URL2 + 'api/Employee/';
   // private apiURL = 'https://test-heroku-app-rest.herokuapp.com/user-details/';
   private currentUser: User;
   private userSubject = new Subject<User>();
@@ -18,7 +22,9 @@ export class UserService {
   }
 
   getCurrentUser() {
-    this.getUser(10).subscribe(
+    const currentTokenOfUser = jwt_decode(sessionStorage.getItem('auth_token'));
+    console.log('token object : ', currentTokenOfUser);
+    this.getUser(currentTokenOfUser.sub).subscribe(
       response => {
             this.userSubject.next(response);
           },
@@ -29,8 +35,12 @@ export class UserService {
   }
 
 
-  getUser(id: number): Observable<User> {
+  getUser(id: string): Observable<User> {
     return this.http.get<User>(`${this.apiURL}${id}`).pipe(
+      tap( data => {
+        console.log(data);
+      }),
+
       map( data => {
         let tmp: any = data.position;
         switch (tmp) {
