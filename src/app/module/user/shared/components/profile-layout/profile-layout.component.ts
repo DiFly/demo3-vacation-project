@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 
 import {UserService} from '../../../../../shared/services/user.service';
 import {User} from '../../../../../shared/models/user-model';
+import {HttpClient} from '@angular/common/http';
+import {environment} from '../../../../../../environments/environment';
+import {tap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile-layout',
@@ -11,7 +14,8 @@ import {User} from '../../../../../shared/models/user-model';
 export class ProfileLayoutComponent implements OnInit {
   currentUser: User;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService,
+              private http: HttpClient) {
     this.currentUser = {
       firstname: 'Name',
       surname: 'Surname',

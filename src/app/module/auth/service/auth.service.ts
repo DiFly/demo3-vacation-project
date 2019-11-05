@@ -25,4 +25,14 @@ export class AuthService {
         sessionStorage.setItem('auth_token', response['access_token']);
       }));
   }
+
+  IsUserLoggedIn() {
+    const user = sessionStorage.getItem('auth_token');
+    console.log(!user === null );
+    return !(user === null);
+  }
+
+  LogOut() {
+    sessionStorage.removeItem('auth_token');
+  }
 }
