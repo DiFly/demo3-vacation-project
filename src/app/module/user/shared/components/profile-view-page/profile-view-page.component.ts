@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {AvailableDaysService} from '../../services/available-days.service';
 import {AvailableDays} from '../../models/available-days.model';
 import {VacationListOfSingleUserService} from '../../services/vacation-list-of-single-user.service';
 import {Vacation} from '../../../../../shared/models/vacation-model';
+import {EmployeeModel} from '../../../../../shared/models/employee-model';
+import {UserService} from '../../../../../shared/services/user.service';
 
 @Component({
   selector: 'app-profile-view-page',
@@ -10,11 +11,14 @@ import {Vacation} from '../../../../../shared/models/vacation-model';
   styleUrls: ['./profile-view-page.component.scss']
 })
 export class ProfileViewPageComponent implements OnInit {
+  currentUser: EmployeeModel;
+
+  // ToDo delete unused service
   available: AvailableDays;
   vacations: Vacation[];
 
   constructor(
-    private daysService: AvailableDaysService,
+    private userService: UserService,
     private vacationService: VacationListOfSingleUserService
   ) {
     this.available = {
@@ -24,11 +28,10 @@ export class ProfileViewPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.daysService.getAvailableDaysOfUser(10).subscribe(
-      data => {
-        this.available = data;
-      }
-    );
+    this.userService.user$.subscribe( user => {
+      this.currentUser = user;
+      console.log('header-layout onInit', this.currentUser);
+    });
 
     this.vacationService.getVacations(10).subscribe(
       data => {

@@ -1,6 +1,9 @@
 <div class="billboard br10 ta-c">
-  <h2>{{available.days}}</h2>
-  <p class="text-big-plus">days available</p>
+  <h2>{{currentUser.balance}}</h2>
+  <p *ngIf="currentUser.balance !== 1; else oneDay" class="text-big-plus">days available</p>
+  <ng-template #oneDay>
+    <p class="text-big-plus">day available</p>
+  </ng-template>
   <button class="btn-standart" routerLink='/profile/request-vacation/{{available.userId}}'>REQUEST VACATION</button>
 </div>
 
