@@ -12,10 +12,6 @@ import {VacationService} from '../../../../../shared/services/vacation.service';
 })
 export class ProfileViewPageComponent implements OnInit {
   currentUser: EmployeeModel;
-
-
-  // ToDo delete unused service
-
   vacations: Vacation[];
 
   constructor(
