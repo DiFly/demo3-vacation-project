@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 
-import {VacationListOfSingleUserService} from '../../services/vacation-list-of-single-user.service';
 import {Vacation} from '../../../../../shared/models/vacation-model';
 import {EmployeeModel} from '../../../../../shared/models/employee-model';
 import {UserService} from '../../../../../shared/services/user.service';
+import {VacationService} from '../../../../../shared/services/vacation.service';
 
 @Component({
   selector: 'app-profile-view-page',
@@ -20,7 +20,7 @@ export class ProfileViewPageComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private vacationService: VacationListOfSingleUserService
+    private vacationService: VacationService,
   ) {}
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class ProfileViewPageComponent implements OnInit {
       console.log('header-layout onInit', this.currentUser);
     });
 
-    this.vacationService.getVacations(10).subscribe(
+    this.vacationService.getAllVacationByUserId(this.currentUser.id).subscribe(
       data => {
         this.vacations = data;
       }

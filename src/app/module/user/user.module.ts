@@ -10,7 +10,7 @@ import { ProfileLayoutComponent } from './shared/components/profile-layout/profi
 import { ProfileRequestVacationPageComponent } from './shared/components/profile-request-vacation-page/profile-request-vacation-page.component';
 
 import { AmountDatePipe } from './shared/pipes/amount-date.pipe';
-import {VacationListOfSingleUserService} from './shared/services/vacation-list-of-single-user.service';
+
 
 @NgModule({
   declarations: [ProfileViewPageComponent,
@@ -18,9 +18,7 @@ import {VacationListOfSingleUserService} from './shared/services/vacation-list-o
     ProfileRequestVacationPageComponent,
     AmountDatePipe
   ],
-  providers: [
-    VacationListOfSingleUserService
-  ],
+  providers: [],
   imports: [
     CommonModule,
     RouterModule.forChild([
