@@ -1,8 +1,12 @@
-import {User} from './user-model';
+import {EmployeeModel} from './employee-model';
 
-export class Team {
+export class TeamModel {
   id: string;
   name: string;
-  leader: User;
-  members?: User[];
+  teamLeadId: string;
+  deleted: boolean;
+  nullable: true;
+  teamLeadName: string;
+  employeeCount: number;
+  employees?: EmployeeModel[];
 }

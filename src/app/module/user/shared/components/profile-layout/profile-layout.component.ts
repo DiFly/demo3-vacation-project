@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 import {UserService} from '../../../../../shared/services/user.service';
-import {User} from '../../../../../shared/models/user-model';
-import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../../../../environments/environment';
-import {tap} from 'rxjs/operators';
+import {EmployeeModel} from '../../../../../shared/models/employee-model';
 
 @Component({
   selector: 'app-profile-layout',
@@ -12,26 +10,46 @@ import {tap} from 'rxjs/operators';
   styleUrls: ['./profile-layout.component.scss']
 })
 export class ProfileLayoutComponent implements OnInit {
-  currentUser: User;
+  currentUser: EmployeeModel;
 
   constructor(private userService: UserService,
               private http: HttpClient) {
     this.currentUser = {
-      firstname: 'Name',
+      id: 'emptyId',
+      firstName: 'FirstName',
       surname: 'Surname',
-      dateend: undefined,
-      datestart: undefined,
-      daysavailable: 0,
-      emailself: '',
-      emailwork: '',
-      id: 0,
-      phone: '',
-      position: undefined,
-      skype: '',
-      status: undefined,
-      team: undefined,
-      userpic: '/assets/img/random-user_imageF39.png',
-    };
+      avatar: './assets/img/user.png',
+      birthdate: new Date(),
+      jobTitle: 'Your job',
+      workEmail: 'Your work email',
+      email: 'Your self email',
+      phone: '+380123456789',
+      skype: 'Your skype',
+      workStartDate: new Date(),
+      isActive: true,
+      workEndDate: new Date(),
+      deleted: false,
+      balance: 1,
+      teamId: 'teamId'
+    // teams?: TeamModel[]
+
+
+
+    // firstname: 'Name',
+    // surname: 'Surname',
+    // dateend: undefined,
+    // datestart: undefined,
+    // daysavailable: 0,
+    // emailself: '',
+    // emailwork: '',
+    // id: 'testDI',
+    // phone: '',
+    // position: undefined,
+    // skype: '',
+    // status: undefined,
+    // team: undefined,
+    // userpic: '/assets/img/random-user_imageF39.png',
+  };
   }
 
   ngOnInit() {

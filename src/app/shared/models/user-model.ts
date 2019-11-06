@@ -1,5 +1,3 @@
-import {Team} from './team-model';
-
 export enum UserStatus {
   Active,
   Dismiss
@@ -25,7 +23,7 @@ export class User {
   datestart: Date;
   status: UserStatus;
   dateend?: Date;
-  team?: Team;
+
 
   daysavailable?: number;
 }

@@ -3,6 +3,7 @@ import {User} from '../../models/user-model';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {UserService} from '../../services/user.service';
+import {EmployeeModel} from '../../models/employee-model';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ import {UserService} from '../../services/user.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit, OnChanges {
-  currentUser: User;
+  currentUser: EmployeeModel;
 
   constructor(private userService: UserService) {
   }
