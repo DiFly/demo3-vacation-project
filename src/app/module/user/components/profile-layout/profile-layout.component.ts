@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import jwt_decode from 'jwt-decode';
 
-import {UserService} from '../../../../../shared/services/user.service';
-import {EmployeeModel} from '../../../../../shared/models/employee-model';
+import {UserService} from '../../../../shared/services/user.service';
+import {EmployeeModel} from '../../../../shared/models/employee-model';
 
 @Component({
   selector: 'app-profile-layout',

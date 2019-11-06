@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Vacation} from '../../../../../shared/models/vacation-model';
-import {EmployeeModel} from '../../../../../shared/models/employee-model';
-import {UserService} from '../../../../../shared/services/user.service';
-import {VacationService} from '../../../../../shared/services/vacation.service';
+import {Vacation} from '../../../../shared/models/vacation-model';
+import {EmployeeModel} from '../../../../shared/models/employee-model';
+import {UserService} from '../../../../shared/services/user.service';
+import {VacationService} from '../../../../shared/services/vacation.service';
 
 @Component({
   selector: 'app-profile-view-page',

@@ -5,11 +5,11 @@ import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {SharedModule} from '../../shared/shared.module';
-import { ProfileViewPageComponent } from './shared/components/profile-view-page/profile-view-page.component';
-import { ProfileLayoutComponent } from './shared/components/profile-layout/profile-layout.component';
-import { ProfileRequestVacationPageComponent } from './shared/components/profile-request-vacation-page/profile-request-vacation-page.component';
+import { ProfileViewPageComponent } from './components/profile-view-page/profile-view-page.component';
+import { ProfileLayoutComponent } from './components/profile-layout/profile-layout.component';
+import { ProfileRequestVacationPageComponent } from './components/profile-request-vacation-page/profile-request-vacation-page.component';
 
-import { AmountDatePipe } from './shared/pipes/amount-date.pipe';
+import { AmountDatePipe } from './pipes/amount-date.pipe';
 
 
 @NgModule({
