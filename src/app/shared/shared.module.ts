@@ -1,13 +1,12 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import { UserPositionPipe } from './pipes/user-position.pipe';
 import { PhoneNumberPipe } from './pipes/phone-number.pipe';
+import {VacationService} from './services/vacation.service';
 
 
 @NgModule({
-  declarations: [UserPositionPipe, PhoneNumberPipe],
+  declarations: [PhoneNumberPipe],
   exports: [
-    UserPositionPipe,
     PhoneNumberPipe
   ],
   imports: [

@@ -1,7 +1,4 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
-import {User} from '../../models/user-model';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import {UserService} from '../../services/user.service';
 import {EmployeeModel} from '../../models/employee-model';
 
