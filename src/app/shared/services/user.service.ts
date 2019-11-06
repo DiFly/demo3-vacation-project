@@ -1,12 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {map, tap} from 'rxjs/operators';
-import {BehaviorSubject, Observable, Subject} from 'rxjs';
+import {tap} from 'rxjs/operators';
+import {BehaviorSubject, Observable} from 'rxjs';
 import jwt_decode from 'jwt-decode';
 
-
 import {environment} from '../../../environments/environment';
-import {User, UserPosition, UserStatus} from '../models/user-model';
 import {EmployeeModel} from '../models/employee-model';
 
 @Injectable({
@@ -15,7 +13,6 @@ import {EmployeeModel} from '../models/employee-model';
 export class UserService {
   private apiURL = environment.API_URL2 + 'api/Employee/';
   // private apiURL = 'https://test-heroku-app-rest.herokuapp.com/user-details/';
-  // private currentUser: User;
   private userSubject = new BehaviorSubject<EmployeeModel>(null);
   public user$ = this.userSubject.asObservable();
 

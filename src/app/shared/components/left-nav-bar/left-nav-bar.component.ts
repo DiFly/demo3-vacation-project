@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-left-nav-bar',
@@ -6,12 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./left-nav-bar.component.scss']
 })
 export class LeftNavBarComponent implements OnInit {
-  currentStatus: 'Account Manager';
+  userRole: 'Team Leader';
   // Administrator, Team Leader
 
   constructor() { }
 
   ngOnInit() {
+    const tmpToken = jwt_decode(sessionStorage.getItem('auth_token'));
+    this.userRole = tmpToken.role;
   }
 
 }

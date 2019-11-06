@@ -1,13 +1,37 @@
 <nav>
   <ul>
-    <li routerLinkActive="active-link"><a class="text-middle-plus" routerLink="/admin/add-employee" routerLinkActive="active-link"><span>Add New Employee</span></a></li>
-    <li routerLinkActive="active-link"><a class="text-middle-plus"routerLink="/admin/add-team" routerLinkActive="active-link"><span>Add New Team</span></a></li>
-    <li routerLinkActive="active-link"><a class="text-middle-plus"routerLink="/team/vacation-requests" routerLinkActive="active-link"><span>Vacation requests</span></a></li>
-    <li routerLinkActive="active-link"><a class="text-middle-plus"routerLink="/team/calendar" routerLinkActive="active-link"><span>Team Calendar</span></a></li>
-    <li routerLinkActive="active-link"><a class="text-middle-plus"routerLink="/team/employees-list" routerLinkActive="active-link"><span>List Of Employees</span></a></li>
-    <li routerLinkActive="active-link"><a class="text-middle-plus"routerLink="/admin/team-list" routerLinkActive="active-link"><span>List Of Teams</span></a></li>
-    <li class="last-empty-li"></li>
+    <li *ngIf="userRole === 'Administrator'" routerLinkActive="active-link">
+      <a class="text-middle-plus" routerLink="/admin/add-employee" routerLinkActive="active-link">
+        <span>Add New Employee</span>
+      </a>
+    </li>
+    <li *ngIf="userRole === 'Administrator'" routerLinkActive="active-link">
+      <a class="text-middle-plus"routerLink="/admin/add-team" routerLinkActive="active-link">
+        <span>Add New Team</span>
+      </a>
+    </li>
+    <li routerLinkActive="active-link">
+      <a class="text-middle-plus"routerLink="/team/vacation-requests" routerLinkActive="active-link">
+        <span>Vacation requests</span>
+      </a>
+    </li>
+    <li routerLinkActive="active-link">
+      <a class="text-middle-plus"routerLink="/team/calendar" routerLinkActive="active-link">
+        <span>Team Calendar</span>
+      </a>
+    </li>
+    <li routerLinkActive="active-link">
+      <a class="text-middle-plus"routerLink="/team/employees-list" routerLinkActive="active-link">
+        <span>List Of Employees</span>
+      </a>
+    </li>
+    <li routerLinkActive="active-link">
+      <a class="text-middle-plus"routerLink="/admin/team-list" routerLinkActive="active-link">
+        <span>List Of Teams</span>
+      </a>
+    </li>
+    <li class="last-empty-li">
+    </li>
   </ul>
-
   <div class="empty-block"></div>
 </nav>
