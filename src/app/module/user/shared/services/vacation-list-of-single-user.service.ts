@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {AvailableDays} from '../models/available-days.model';
 import {map} from 'rxjs/operators';
 import {Vacation} from '../../../../shared/models/vacation-model';
 

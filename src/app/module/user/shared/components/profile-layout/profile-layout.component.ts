@@ -13,7 +13,6 @@ import {EmployeeModel} from '../../../../../shared/models/employee-model';
 export class ProfileLayoutComponent implements OnInit {
   currentUser: EmployeeModel;
   userRole: 'AccountManager';
-  userId: '';
 
   constructor(private userService: UserService,
               private http: HttpClient) {
@@ -46,7 +45,6 @@ export class ProfileLayoutComponent implements OnInit {
 
     const tmpToken = jwt_decode(sessionStorage.getItem('auth_token'));
     this.userRole = tmpToken.role;
-    this.userId = tmpToken.sub;
   }
 
 }
