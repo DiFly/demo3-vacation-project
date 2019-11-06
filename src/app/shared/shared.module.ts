@@ -11,6 +11,9 @@ import {VacationService} from './services/vacation.service';
   ],
   imports: [
     CommonModule
+  ],
+  providers: [
+    VacationService
   ]
 })
 export class SharedModule { }
