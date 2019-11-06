@@ -15,28 +15,34 @@
 
   <table>
     <thead>
-      <tr>
-        <th>vacations dates</th>
-        <th>descriptions</th>
-        <th>status</th>
-        <th>vacation balance</th>
-      </tr>
+    <tr>
+      <th>vacations dates</th>
+      <th>descriptions</th>
+      <th>status</th>
+      <th>vacation balance</th>
+    </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let vacation of vacations">
-        <th class="dates text-middle">{{vacation.startDate | date: 'd MMM yyyy' }} - {{vacation.endDate | date: 'd MMM yyyy' }}</th>
-        <th class="description text-middle">Vacation</th>
-        <th class="status text-middle"
-            [ngClass]='{
+    <tr *ngFor="let vacation of vacations">
+      <th class="dates text-middle">{{vacation.startDate | date: 'd MMM yyyy' }} - {{vacation.endDate | date: 'd MMM yyyy' }}</th>
+      <th class="description text-middle">Vacation</th>
+      <th class="status text-middle"
+          [ngClass]='{
               denied: vacation.status === 2,
               approved: vacation.status === 1
             }'
-        >
-<!--          ToDo Bad code, change to pipe-->
-          {{vacation.status === 0 ? 'Unconfirmed' : vacation.status === 1 ? 'Approved' : 'Denied'}}
-        </th>
-        <th class="balance text-middle">05 days</th>
-      </tr>
+      >
+        <!--          ToDo Bad code, change to pipe-->
+        {{vacation.status === 0 ? 'Unconfirmed' : vacation.status === 1 ? 'Approved' : 'Denied'}}
+      </th>
+      <th class="balance text-middle">05 days</th>
+    </tr>
+    <tr *ngIf="!vacations">
+      <th class="dates text-middle">No information</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
     </tbody>
   </table>
 </div>
