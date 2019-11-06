@@ -16,6 +16,6 @@ export class EmployeeModel {
   workEndDate?: Date;
   deleted: boolean;
   balance: number;
-  teamId?: any;
+  teamId?: string;
   teams?: TeamModel[];
 }

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import jwt_decode from 'jwt-decode';
 
 import {UserService} from '../../../../../shared/services/user.service';
 import {EmployeeModel} from '../../../../../shared/models/employee-model';
@@ -11,6 +12,8 @@ import {EmployeeModel} from '../../../../../shared/models/employee-model';
 })
 export class ProfileLayoutComponent implements OnInit {
   currentUser: EmployeeModel;
+  userRole: 'AccountManager';
+  userId: '';
 
   constructor(private userService: UserService,
               private http: HttpClient) {
@@ -32,31 +35,18 @@ export class ProfileLayoutComponent implements OnInit {
       balance: 1,
       teamId: 'teamId'
     // teams?: TeamModel[]
-
-
-
-    // firstname: 'Name',
-    // surname: 'Surname',
-    // dateend: undefined,
-    // datestart: undefined,
-    // daysavailable: 0,
-    // emailself: '',
-    // emailwork: '',
-    // id: 'testDI',
-    // phone: '',
-    // position: undefined,
-    // skype: '',
-    // status: undefined,
-    // team: undefined,
-    // userpic: '/assets/img/random-user_imageF39.png',
   };
   }
 
   ngOnInit() {
     this.userService.user$.subscribe( user => {
       this.currentUser = user;
-      console.log('header-layout onInit', this.currentUser);
+      console.log('profile-layout onInit', this.currentUser);
     });
+
+    const tmpToken = jwt_decode(sessionStorage.getItem('auth_token'));
+    this.userRole = tmpToken.role;
+    this.userId = tmpToken.sub;
   }
 
 }

@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./left-nav-bar.component.scss']
 })
 export class LeftNavBarComponent implements OnInit {
+  currentStatus: 'Account Manager';
+  // Administrator, Team Leader
 
   constructor() { }
 

@@ -1,20 +1,20 @@
 <div class="container">
   <div class="profile br10">
     <div class="title br10">
-      <div routerLink="/admin/edit-employee/1" class="edit"><img src="/assets/img/edit.png"></div>
+      <div *ngIf="userRole === 'Administrator'" routerLink="/admin/edit-employee/{{userId}}}" class="edit"><img src="/assets/img/edit.png"></div>
       <p class="text-big text-bold">My Profile</p>
     </div>
 
     <div class="user-title">
-      <img *ngIf="currentUser.userpic; else nonUserImage" src="{{currentUser.userpic}}">
+      <img *ngIf="currentUser.avatar; else nonUserImage" src="{{currentUser.avatar}}">
       <ng-template #nonUserImage>
-        <img src="/assets/img/random-user_imageF39.png">
+        <img src="./assets/img/user.png">
       </ng-template>
 
       <div class="user-title_inform">
-        <h3 class="text-big">{{currentUser.firstname}}  {{currentUser.surname}}</h3>
-        <p class="text-middle">{{currentUser.position | userPosition}}</p>
-        <p *ngIf="currentUser.status === 0; else inActive"><span class="green-round"></span> active</p>
+        <h3 class="text-big">{{currentUser.firstName}}  {{currentUser.surname}}</h3>
+        <p class="text-middle">{{userRole}}</p>
+        <p *ngIf="currentUser.isActive; else inActive"><span class="green-round"></span> active</p>
         <ng-template #inActive>
           <p><span class="red-round"></span> inactive</p>
         </ng-template>
@@ -24,15 +24,15 @@
     <div>
       <div class="simple-inform-block">
         <p class="text-small">date od birth</p>
-        <p class="text-middle">{{currentUser.birthday | date: 'd MMMM yyyy'}}</p>
+        <p class="text-middle">{{currentUser.birthdate | date: 'd MMMM yyyy'}}</p>
       </div>
       <div class="simple-inform-block">
         <p class="text-small">personal email</p>
-        <p class="text-middle">{{currentUser.emailself}}</p>
+        <p class="text-middle">{{currentUser.email}}</p>
       </div>
       <div class="simple-inform-block">
         <p class="text-small">work email</p>
-        <p class="text-middle">{{currentUser.emailwork}}</p>
+        <p class="text-middle">{{currentUser.workEmail}}</p>
       </div>
       <div class="simple-inform-block">
         <p class="text-small">phone number</p>
@@ -44,8 +44,8 @@
       </div>
       <div class="simple-inform-block">
         <p class="text-small">hire date</p>
-        <p class="text-middle">{{currentUser.datestart | date: 'd MMMM yyyy'}} -
-          <span *ngIf="currentUser.dateend; else noDateEnd">{{currentUser.dateend | date: 'd MMMM yyyy'}}</span>
+        <p class="text-middle">{{currentUser.workStartDate | date: 'd MMMM yyyy'}} -
+          <span *ngIf="currentUser.workEndDate; else noDateEnd">{{currentUser.workEndDate | date: 'd MMMM yyyy'}}</span>
           <ng-template #noDateEnd>
             <span>Nowadays</span>
           </ng-template>
@@ -53,15 +53,15 @@
       </div>
       <div class="simple-inform-block">
         <p class="text-small">team name</p>
-        <p class="text-middle"*ngIf="currentUser.team; else noTeam">{{currentUser.team.name}}</p>
+        <p class="text-middle"*ngIf="currentUser.teams.length > 0; else noTeam">{{currentUser.teams[0].name}}</p>
         <ng-template #noTeam>
           <p class="text-middle">No Team</p>
         </ng-template>
       </div>
       <div class="simple-inform-block">
         <p class="text-small">team leader</p>
-        <p class="text-middle" *ngIf="currentUser.team; else noTeamLeader">
-          {{currentUser.team.leader.firstname}} {{currentUser.team.leader.surname}}
+        <p class="text-middle" *ngIf="currentUser.teams.length > 0; else noTeamLeader">
+          {{currentUser.teams[0].teamLeadName}}
         </p>
         <ng-template #noTeamLeader>
           <p class="text-middle">No Team Leader</p>

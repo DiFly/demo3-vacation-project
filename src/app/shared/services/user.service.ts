@@ -40,41 +40,7 @@ export class UserService {
     return this.http.get<EmployeeModel>(`${this.apiURL}${id}`).pipe(
       tap( data => {
         console.log(data);
-      }),
-
-      // map( data => {
-      //   // let tmp: any = data.position;
-      //   // switch (tmp) {
-      //   //   case 'AccountManager':
-      //   //     tmp = UserPosition.AccountManager;
-      //   //     break;
-      //   //   case 'TeamLeader':
-      //   //     tmp = UserPosition.TeamLeader;
-      //   //     break;
-      //   //   case 'Admin':
-      //   //     tmp = UserPosition.Admin;
-      //   //     break;
-      //   //   default:
-      //   //     tmp = tmp;
-      //   // }
-      //   // data.position = tmp;
-      //   //
-      //   // let tmpStatus: any = data.status;
-      //   // switch (tmpStatus) {
-      //   //   case 'Active':
-      //   //     tmpStatus = UserStatus.Active;
-      //   //     break;
-      //   //   case 'Dismiss':
-      //   //     tmpStatus = UserStatus.Dismiss;
-      //   //     break;
-      //   //   default:
-      //   //     tmpStatus = tmpStatus;
-      //   // }
-      //   // data.status = tmpStatus;
-      //   //
-      //   // // this.currentUser = data;
-      //   return data;
-      // })
+      })
     );
   }
 }
