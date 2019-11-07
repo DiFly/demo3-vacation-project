@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {VacationService} from '../../../../../shared/services/vacation.service';
+import {Vacation} from '../../../../../shared/models/vacation-model';
 
 @Component({
   selector: 'app-list-vacation-requests',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-vacation-requests-page.component.scss']
 })
 export class ListVacationRequestsPageComponent implements OnInit {
+  vacations: Vacation[];
 
-  constructor() { }
+  constructor(
+    private vacationService: VacationService
+  ) { }
 
   ngOnInit() {
+    this.vacationService.getAllVacation().subscribe( data => {
+        this.vacations = data;
+        console.log(data);
+      }
+    );
   }
 
 }

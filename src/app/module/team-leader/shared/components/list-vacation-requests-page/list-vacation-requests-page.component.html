@@ -16,70 +16,34 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <th class="name text-middle">Name Surname</th>
-      <th class="team text-middle">Team Name</th>
-      <th class="dates text-middle">15 Jun 18 - 20 Jun 2018 </th>
-      <th class="amount text-middle">05 days</th>
-      <th class="balance text-middle">05 days</th>
-      <th class="x text-middle"><span class="unconfirmed"></span></th>
+    <tr *ngFor="let vacation of vacations">
+      <th class="name text-middle">{{vacation.employee.firstName}} {{vacation.employee.surname}}</th>
+      <th class="team text-middle">
+        <span *ngIf="vacation.employee.teams; else noTeam">{{vacation.employee.teams[0].name}}</span>
+        <ng-template #noTeam>
+          No Team
+        </ng-template>
+      </th>
+      <th class="dates text-middle">{{vacation.startDate | date: 'd MMM yyyy'}} - {{vacation.startDate | date: 'd MMM yyyy'}}</th>
+      <th class="amount text-middle">{{vacation.startDate | amountOfDays: vacation.endDate}}</th>
+      <th class="balance text-middle">{{vacation.employee.balance}} days</th>
+      <th class="x text-middle">
+        <span [ngClass]='{
+          unconfirmed: vacation.status === 0,
+          approve: vacation.status === 1,
+          refuse: vacation.status === 2
+          }'></span>
+      </th>
     </tr>
-    <tr>
-      <th class="name text-middle">Name Surname</th>
-      <th class="team text-middle">Team Name</th>
-      <th class="dates text-middle">XX/XX/XX - XX/XX/XX</th>
-      <th class="amount text-middle">XX</th>
-      <th class="balance text-middle">XX days</th>
-      <th class="x text-middle"><span class="unconfirmed"></span></th>
+    <tr *ngIf="!vacations">
+      <th class="name text-middle">No vacations</th>
+      <th class="team text-middle"></th>
+      <th class="dates text-middle"></th>
+      <th class="amount text-middle"></th>
+      <th class="balance text-middle"></th>
+      <th class="x text-middle"></th>
     </tr>
-    <tr>
-      <th class="name text-middle">Name Surname</th>
-      <th class="team text-middle">Team Name</th>
-      <th class="dates text-middle">XX/XX/XX - XX/XX/XX</th>
-      <th class="amount text-middle">XX</th>
-      <th class="balance text-middle">XX days</th>
-      <th class="x text-middle"><span class="unconfirmed"></span></th>
-    </tr>
-    <tr>
-      <th class="name text-middle">Name Surname</th>
-      <th class="team text-middle">Team Name</th>
-      <th class="dates text-middle">XX/XX/XX - XX/XX/XX</th>
-      <th class="amount text-middle">XX</th>
-      <th class="balance text-middle">XX days</th>
-      <th class="x text-middle"><span class="unconfirmed"></span></th>
-    </tr>
-    <tr>
-      <th class="name text-middle">Name Surname</th>
-      <th class="team text-middle">Team Name</th>
-      <th class="dates text-middle">XX/XX/XX - XX/XX/XX</th>
-      <th class="amount text-middle">XX</th>
-      <th class="balance text-middle">XX days</th>
-      <th class="x text-middle"><span class="unconfirmed"></span></th>
-    </tr>
-    <tr>
-      <th class="name text-middle">Name Surname</th>
-      <th class="team text-middle">Team Name</th>
-      <th class="dates text-middle">XX/XX/XX - XX/XX/XX</th>
-      <th class="amount text-middle">XX</th>
-      <th class="balance text-middle">XX days</th>
-      <th class="x text-middle"><span class="approve"></span></th>
-    </tr>
-    <tr>
-      <th class="name text-middle">Name Surname</th>
-      <th class="team text-middle">Team Name</th>
-      <th class="dates text-middle">XX/XX/XX - XX/XX/XX</th>
-      <th class="amount text-middle">XX</th>
-      <th class="balance text-middle">XX days</th>
-      <th class="x text-middle"><span class="approve"></span></th>
-    </tr>
-    <tr>
-      <th class="name text-middle">Name Surname</th>
-      <th class="team text-middle">Team Name</th>
-      <th class="dates text-middle">XX/XX/XX - XX/XX/XX</th>
-      <th class="amount text-middle">XX</th>
-      <th class="balance text-middle">XX days</th>
-      <th class="x text-middle"><span class="refuse"></span></th>
-    </tr>
+
 
     </tbody>
   </table>

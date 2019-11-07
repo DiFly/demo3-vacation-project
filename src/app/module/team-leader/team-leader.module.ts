@@ -6,6 +6,7 @@ import { ListVacationRequestsPageComponent } from './shared/components/list-vaca
 import { TeamCalendarPageComponent } from './shared/components/team-calendar-page/team-calendar-page.component';
 import { ListEmployeesPageComponent } from './shared/components/list-employees-page/list-employees-page.component';
 import { EmployeeProfilePageComponent } from './shared/components/employee-profile-page/employee-profile-page.component';
+import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { EmployeeProfilePageComponent } from './shared/components/employee-profi
       {path: 'employees-list', component: ListEmployeesPageComponent},
       {path: 'employees-list/employee-profile/:id', component: EmployeeProfilePageComponent},
       {path: 'calendar', component: TeamCalendarPageComponent}
-    ])
+    ]),
+    SharedModule
   ],
   exports: [
     RouterModule
