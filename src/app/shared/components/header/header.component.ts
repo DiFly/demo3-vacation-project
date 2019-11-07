@@ -1,6 +1,8 @@
 import {Component, OnChanges, OnInit} from '@angular/core';
 import {UserService} from '../../services/user.service';
 import {EmployeeModel} from '../../models/employee-model';
+import {AuthService} from '../../../module/auth/service/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +12,11 @@ import {EmployeeModel} from '../../models/employee-model';
 export class HeaderComponent implements OnInit, OnChanges {
   currentUser: EmployeeModel;
 
-  constructor(private userService: UserService) {
+  constructor(
+    private userService: UserService,
+    private authService: AuthService,
+    private route: Router
+    ) {
   }
 
   ngOnInit() {
@@ -25,4 +31,8 @@ export class HeaderComponent implements OnInit, OnChanges {
       console.log('header-layout onchanges', this.currentUser);
   }
 
+  logout() {
+    this.authService.LogOut();
+    this.route.navigate(['/auth/login']);
+  }
 }

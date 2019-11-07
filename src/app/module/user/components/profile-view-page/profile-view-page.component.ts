@@ -27,6 +27,7 @@ export class ProfileViewPageComponent implements OnInit {
 
     this.vacationService.getAllVacationByUserId(this.currentUser.id).subscribe(
       data => {
+        console.log('getAllVacationByUserId: ', data);
         this.vacations = data;
       }
     );

@@ -5,8 +5,8 @@
   grid-template-rows: 85px 1fr;
   grid-gap: 3px;
   grid-template-areas:
-    'header header'
-    'nav main';
+    'header header header'
+    'nav main main';
 }
 
 app-header {
@@ -17,6 +17,6 @@ app-left-nav-bar {
   grid-area: nav;
 }
 
-router-outlet {
+main {
   grid-area: main;
 }

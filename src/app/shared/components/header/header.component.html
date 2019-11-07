@@ -18,16 +18,15 @@
   </nav>
 
 
-  <div class="block-user dropdown" *ngIf="currentUser">
+  <div class="block-user" *ngIf="currentUser">
     <p class="text-middle-plus">
       {{currentUser.firstName}} {{currentUser.surname}}</p>
     <img *ngIf="currentUser.avatar; else defaultAvatar" src="{{currentUser.avatar}}">
     <ng-template #defaultAvatar>
       <img  src="./assets/img/user.png">
     </ng-template>
-    <div class="dropdown-content">
-      <a href="#">Edit profile</a>
-      <a href="#">Log Out</a>
+    <div (click)="logout()" class="dropdown-content">
+      <p>Log Out </p>
     </div>
   </div>
 </header>
