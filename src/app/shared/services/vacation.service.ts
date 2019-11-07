@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {Vacation} from '../models/vacation-model';
-import {map} from 'rxjs/operators';
+import {catchError, map, tap} from 'rxjs/operators';
+import {of} from 'rxjs';
+import {EmployeeModel} from '../models/employee-model';
 
 @Injectable()
 export class VacationService {
@@ -21,6 +23,31 @@ export class VacationService {
         }
       )
     );
+  }
+
+  postCreateVacation(employeeId: string, startDate: Date, endDate: Date, comment = 'no comments', employee: EmployeeModel) {
+    const vacation: Vacation = {
+      employeeId,
+      startDate,
+      endDate,
+      comment,
+      createDateTime: new Date(),
+      status: 0,
+      deleted: false,
+      employee
+    };
+    console.log('vacation-service: ', vacation);
+
+    return this.http.post<Vacation>(this.apiURL, vacation)
+      .pipe(
+        tap(data => {
+          console.log('Tap from create vacation', data);
+        }),
+        catchError( error => {
+          console.log('Error from create vacation', error);
+          return of({results: null});
+        })
+      );
   }
 
   // ToDo Post api/Vacation create

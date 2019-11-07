@@ -1,6 +1,9 @@
 <div class="billboard br10 ta-c">
-  <h2>18</h2>
-  <p class="text-big-plus">days available</p>
+  <h2>{{currentUser?.balance}}</h2>
+  <p *ngIf="currentUser?.balance !== 1; else oneDay" class="text-big-plus">days available</p>
+  <ng-template #oneDay>
+    <p class="text-big-plus">day available</p>
+  </ng-template>
 </div>
 
 
@@ -25,7 +28,7 @@
           name="message"
           rows="10" cols="30"
           placeholder="Enter your comment here"
-          formControlName="vacationComment"
+          formControlName="comment"
         ></textarea>
       </div>
     </div>
@@ -36,7 +39,7 @@
         <input
           type="text"
           placeholder="XX/XX/XXXX"
-          formControlName="vacationDataFrom"
+          formControlName="startDate"
           #dateFrom
         >
       </div>
@@ -46,7 +49,7 @@
         <input
           type="text"
           placeholder="XX/XX/XXXX"
-          formControlName="vacationDataTo"
+          formControlName="endDate"
           #dateTo
         >
       </div>
