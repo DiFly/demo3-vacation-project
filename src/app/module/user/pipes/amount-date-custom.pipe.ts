@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'amountDate'
+  name: 'amountDateCustom'
 })
-export class AmountDatePipe implements PipeTransform {
+export class AmountDateCustomPipe implements PipeTransform {
 
   transform(value: string, ...args: any[]): any {
     if (value === undefined || args.length === 0) {

@@ -9,14 +9,14 @@ import { ProfileViewPageComponent } from './components/profile-view-page/profile
 import { ProfileLayoutComponent } from './components/profile-layout/profile-layout.component';
 import { ProfileRequestVacationPageComponent } from './components/profile-request-vacation-page/profile-request-vacation-page.component';
 
-import { AmountDatePipe } from './pipes/amount-date.pipe';
+import { AmountDateCustomPipe } from './pipes/amount-date-custom.pipe';
 
 
 @NgModule({
   declarations: [ProfileViewPageComponent,
     ProfileLayoutComponent,
     ProfileRequestVacationPageComponent,
-    AmountDatePipe
+    AmountDateCustomPipe
   ],
   providers: [],
   imports: [

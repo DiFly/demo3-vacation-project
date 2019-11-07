@@ -31,6 +31,7 @@ export class VacationService {
       startDate,
       endDate,
       comment,
+      // ToDo: maybe delete createDateTime, status, deleted and employee
       createDateTime: new Date(),
       status: 0,
       deleted: false,
@@ -50,7 +51,7 @@ export class VacationService {
       );
   }
 
-  // ToDo Post api/Vacation create
+
   // ToDo Put api/Vacation change
 
   getVacationById(id: string) {

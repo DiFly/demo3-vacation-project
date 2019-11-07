@@ -35,7 +35,8 @@
         <!--          ToDo Bad code, change to pipe-->
         {{vacation.status === 0 ? 'Unconfirmed' : vacation.status === 1 ? 'Approved' : 'Denied'}}
       </th>
-      <th class="balance text-middle">05 days</th>
+      <!-- ToDo Bad code, change to pipe (vacation balance)-->
+      <th class="balance text-middle">{{vacation.startDate | amountOfDays: vacation.endDate }}</th>
     </tr>
     <tr *ngIf="!vacations">
       <th class="dates text-middle">No information</th>
