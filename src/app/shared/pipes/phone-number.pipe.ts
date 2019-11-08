@@ -6,6 +6,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PhoneNumberPipe implements PipeTransform {
 
   transform(phone: string, ...args: any[]): any {
+    if (!phone) {
+      return 'No phone number';
+    }
+
     if (phone.length === 9 || phone.length === 10) {
       return (
         phone.slice(0, 3) + ' ' +

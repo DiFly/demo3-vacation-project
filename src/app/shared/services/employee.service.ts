@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {catchError, tap} from 'rxjs/operators';
+import {catchError, map, tap} from 'rxjs/operators';
 import {BehaviorSubject, Observable, of} from 'rxjs';
 import jwt_decode from 'jwt-decode';
 
@@ -42,9 +42,18 @@ export class EmployeeService {
 
   getEmployee() {
     return this.http.get<EmployeeModel[]>(`${this.apiURL}/`).pipe(
-      tap(data => {
-        console.log(data);
-      })
+      // tap(data => {
+      //   console.log(data);
+      // }),
+      // map( data =>  {
+      //   // return data.sort( (a, b) => (a.teamId > b.teamId ? 1 : -1));
+      //   data.sort((a, b) => {
+      //     const tmpA = a.teamId ? a.teamId : '0';
+      //     const tmpB = b.teamId ? b.teamId : '0';
+      //     return tmpB.localeCompare(tmpA);
+      //   });
+      //   return data;
+      // })
     );
   }
 

@@ -30,43 +30,48 @@
     </tr>
     </thead>
     <tbody>
-    <tr>
-      <td class="flag"><img src="/assets/img/team-name.svg"></td>
-      <td class="team text-white text-middle left-align">Team Name</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td class="text-middle"><img src="/assets/img/visible.svg"></td>
-      <td class="text-middle"><img src="/assets/img/edit.png"></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td class="text-white text-middle left-align">Name Surname</td>
-      <td class="text-middle text-grey">+38 00 000 00 00</td>
-      <td class="text-middle text-grey">work@email.com</td>
-      <td class="text-white text-middle right-align">XX days</td>
-      <td class="text-middle"><img src="/assets/img/visible.svg"></td>
-      <td class="text-middle"><img src="/assets/img/edit.png"></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td class="text-white text-middle left-align">Name Surname</td>
-      <td class="text-middle text-grey">+38 00 000 00 00</td>
-      <td class="text-middle text-grey">work@email.com</td>
-      <td class="text-white text-middle right-align">XX days</td>
-      <td class="text-middle"><img src="/assets/img/visible.svg"></td>
-      <td class="text-middle"><img src="/assets/img/edit.png"></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td class="text-white text-middle left-align">Name Surname</td>
-      <td class="text-middle text-grey">+38 00 000 00 00</td>
-      <td class="text-middle text-grey">work@email.com</td>
-      <td class="text-white text-middle right-align">XX days</td>
-      <td class="text-middle"><img src="/assets/img/visible.svg"></td>
-      <td class="text-middle"><img src="/assets/img/edit.png"></td>
-    </tr>
+<!--      <tr>-->
+<!--        <td></td>-->
+<!--        <td class="text-white text-middle left-align">Name Surname</td>-->
+<!--        <td class="text-middle text-grey">+38 00 000 00 00</td>-->
+<!--        <td class="text-middle text-grey">work@email.com</td>-->
+<!--        <td class="text-white text-middle right-align">XX days</td>-->
+<!--        <td class="text-middle"><img src="/assets/img/visible.svg"></td>-->
+<!--        <td class="text-middle"><img src="/assets/img/edit.png"></td>-->
+<!--      </tr>-->
 
+      <!-- ToDo List of employees  -->
+      <ng-container  *ngFor="let employee of employees; index as i">
+        <tr *ngIf="employee.teamId !== employees[(i == 0 ? i : i - 1)].teamId">
+          <td class="flag"><img src="/assets/img/team-name.svg"></td>
+          <td class="team text-white text-middle left-align">Team Name</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="text-middle"><img src="/assets/img/visible.svg"></td>
+          <td class="text-middle"><img src="/assets/img/edit.png"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="text-white text-middle left-align">{{employee?.firstName + ' '}}{{employee?.surname}}</td>
+          <td class="text-middle text-grey">{{employee?.phone | phoneNumber}}</td>
+          <td class="text-middle text-grey">{{employee.workEmail ? employee.workEmail : 'No work email'}}</td>
+          <td class="text-white text-middle right-align">{{employee.balance}} {{employee.balance > 1 ? 'days' : 'day'}}</td>
+          <td class="text-middle"><img src="/assets/img/visible.svg"></td>
+          <td class="text-middle"><img src="/assets/img/edit.png"></td>
+        </tr>
+      </ng-container>
+
+      <!-- See this block if no data in employees -->
+      <tr *ngIf="!employees">
+        <td></td>
+        <td class="text-white text-middle left-align">No information</td>
+        <td class="text-middle text-grey"></td>
+        <td class="text-middle text-grey"></td>
+        <td class="text-white text-middle right-align"></td>
+        <td class="text-middle"></td>
+        <td class="text-middle"></td>
+      </tr>
     </tbody>
   </table>
 </div>
