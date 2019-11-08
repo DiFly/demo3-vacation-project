@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 
-import {UserService} from '../../../../shared/services/user.service';
+import {EmployeeService} from '../../../../shared/services/employee.service';
 import {EmployeeModel} from '../../../../shared/models/employee-model';
 import {VacationService} from '../../../../shared/services/vacation.service';
 
@@ -16,7 +16,7 @@ export class ProfileRequestVacationPageComponent implements OnInit {
   requestVacation: FormGroup;
 
   constructor(
-    private userService: UserService,
+    private userService: EmployeeService,
     private vacationService: VacationService,
     private router: Router
   ) { }

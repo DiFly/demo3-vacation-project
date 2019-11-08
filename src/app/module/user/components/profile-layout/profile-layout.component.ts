@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import jwt_decode from 'jwt-decode';
 
-import {UserService} from '../../../../shared/services/user.service';
+import {EmployeeService} from '../../../../shared/services/employee.service';
 import {EmployeeModel} from '../../../../shared/models/employee-model';
 
 @Component({
@@ -14,7 +14,7 @@ export class ProfileLayoutComponent implements OnInit {
   currentUser: EmployeeModel;
   userRole: 'AccountManager';
 
-  constructor(private userService: UserService,
+  constructor(private userService: EmployeeService,
               private http: HttpClient) {
     this.currentUser = {
       id: 'emptyId',

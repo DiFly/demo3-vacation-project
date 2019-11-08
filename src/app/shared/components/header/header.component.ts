@@ -1,5 +1,5 @@
 import {Component, OnChanges, OnInit} from '@angular/core';
-import {UserService} from '../../services/user.service';
+import {EmployeeService} from '../../services/employee.service';
 import {EmployeeModel} from '../../models/employee-model';
 import {AuthService} from '../../../module/auth/service/auth.service';
 import {Router} from '@angular/router';
@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit, OnChanges {
   currentUser: EmployeeModel;
 
   constructor(
-    private userService: UserService,
+    private userService: EmployeeService,
     private authService: AuthService,
     private route: Router
     ) {

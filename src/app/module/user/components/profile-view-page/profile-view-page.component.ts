@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 import {Vacation} from '../../../../shared/models/vacation-model';
 import {EmployeeModel} from '../../../../shared/models/employee-model';
-import {UserService} from '../../../../shared/services/user.service';
+import {EmployeeService} from '../../../../shared/services/employee.service';
 import {VacationService} from '../../../../shared/services/vacation.service';
 
 @Component({
@@ -15,7 +15,7 @@ export class ProfileViewPageComponent implements OnInit {
   vacations: Vacation[];
 
   constructor(
-    private userService: UserService,
+    private userService: EmployeeService,
     private vacationService: VacationService,
   ) {}
 
