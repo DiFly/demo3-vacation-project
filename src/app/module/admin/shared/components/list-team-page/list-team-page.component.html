@@ -14,47 +14,19 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="text-white text-middle">Team Name</td>
-        <td class="text-middle text-grey">Name Surname</td>
-        <td class="text-middle">XX</td>
+      <tr *ngFor="let team of teams">
+        <td class="text-white text-middle">{{team.name}}</td>
+        <td class="text-middle text-grey">{{team?.teamLeadName}}</td>
+        <td class="text-middle">{{team?.employeeCount}}</td>
         <td class="text-middle"><img src="/assets/img/visible.svg"></td>
         <td class="text-middle"><img src="/assets/img/edit.png"></td>
       </tr>
-      <tr>
-        <td class="text-white text-middle">Team Name</td>
-        <td class="text-middle text-grey">Name Surname</td>
-        <td class="text-middle">XX</td>
-        <td class="text-middle"><img src="/assets/img/visible.svg"></td>
-        <td class="text-middle"><img src="/assets/img/edit.png"></td>
-      </tr>
-      <tr>
-        <td class="text-white text-middle">Team Name</td>
-        <td class="text-middle text-grey">Name Surname</td>
-        <td class="text-middle">XX</td>
-        <td class="text-middle"><img src="/assets/img/visible.svg"></td>
-        <td class="text-middle"><img src="/assets/img/edit.png"></td>
-      </tr>
-      <tr>
-        <td class="text-white text-middle">Team Name</td>
-        <td class="text-middle text-grey">Name Surname</td>
-        <td class="text-middle">XX</td>
-        <td class="text-middle"><img src="/assets/img/visible.svg"></td>
-        <td class="text-middle"><img src="/assets/img/edit.png"></td>
-      </tr>
-      <tr>
-        <td class="text-white text-middle">Team Name</td>
-        <td class="text-middle text-grey">Name Surname</td>
-        <td class="text-middle">XX</td>
-        <td class="text-middle"><img src="/assets/img/visible.svg"></td>
-        <td class="text-middle"><img src="/assets/img/edit.png"></td>
-      </tr>
-      <tr>
-        <td class="text-white text-middle">Team Name</td>
-        <td class="text-middle text-grey">Name Surname</td>
-        <td class="text-middle">XX</td>
-        <td class="text-middle"><img src="/assets/img/visible.svg"></td>
-        <td class="text-middle"><img src="/assets/img/edit.png"></td>
+      <tr *ngIf="!teams">
+        <td class="text-white text-middle">No information</td>
+        <td class="text-middle text-grey"></td>
+        <td class="text-middle"></td>
+        <td class="text-middle"></td>
+        <td class="text-middle"></td>
       </tr>
 
     </tbody>

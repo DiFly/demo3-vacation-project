@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {TeamService} from '../../../../../shared/services/team.service';
+import {TeamModel} from '../../../../../shared/models/team-model';
 
 @Component({
   selector: 'app-list-team-page',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-team-page.component.scss']
 })
 export class ListTeamPageComponent implements OnInit {
+  teams: TeamModel[];
 
-  constructor() { }
+  constructor(private teamService: TeamService) { }
 
   ngOnInit() {
+    this.teamService.getTeam().subscribe( data => {
+        this.teams = data;
+        console.log(data);
+      }
+    );
   }
 
 }
