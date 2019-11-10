@@ -3,10 +3,10 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import { FullCalendarModule } from '@fullcalendar/angular';
 
-import { ListVacationRequestsPageComponent } from './shared/components/list-vacation-requests-page/list-vacation-requests-page.component';
-import { TeamCalendarPageComponent } from './shared/components/team-calendar-page/team-calendar-page.component';
-import { ListEmployeesPageComponent } from './shared/components/list-employees-page/list-employees-page.component';
-import { EmployeeProfilePageComponent } from './shared/components/employee-profile-page/employee-profile-page.component';
+import { ListVacationRequestsPageComponent } from './components/list-vacation-requests-page/list-vacation-requests-page.component';
+import { TeamCalendarPageComponent } from './components/team-calendar-page/team-calendar-page.component';
+import { ListEmployeesPageComponent } from './components/list-employees-page/list-employees-page.component';
+import { EmployeeProfilePageComponent } from './components/employee-profile-page/employee-profile-page.component';
 import {SharedModule} from '../../shared/shared.module';
 
 @NgModule({

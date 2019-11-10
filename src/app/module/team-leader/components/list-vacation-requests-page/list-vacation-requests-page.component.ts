@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {VacationService} from '../../../../../shared/services/vacation.service';
-import {Vacation} from '../../../../../shared/models/vacation-model';
+import {VacationService} from '../../../../shared/services/vacation.service';
+import {Vacation} from '../../../../shared/models/vacation-model';
 
 @Component({
   selector: 'app-list-vacation-requests',

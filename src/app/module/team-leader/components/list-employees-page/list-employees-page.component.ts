@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {EmployeeModel} from '../../../../../shared/models/employee-model';
-import {EmployeeService} from '../../../../../shared/services/employee.service';
+import {EmployeeModel} from '../../../../shared/models/employee-model';
+import {EmployeeService} from '../../../../shared/services/employee.service';
 
 @Component({
   selector: 'app-list-employees-page',
