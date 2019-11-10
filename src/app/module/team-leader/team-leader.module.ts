@@ -8,6 +8,7 @@ import { TeamCalendarPageComponent } from './components/team-calendar-page/team-
 import { ListEmployeesPageComponent } from './components/list-employees-page/list-employees-page.component';
 import { EmployeeProfilePageComponent } from './components/employee-profile-page/employee-profile-page.component';
 import {SharedModule} from '../../shared/shared.module';
+import {CalendarService} from './service/calendar.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,9 @@ import {SharedModule} from '../../shared/shared.module';
   ],
   exports: [
     RouterModule
+  ],
+  providers: [
+    CalendarService
   ]
 })
 export class TeamLeaderModule {
