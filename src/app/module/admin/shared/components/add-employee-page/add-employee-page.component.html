@@ -14,17 +14,19 @@
 
       <div>
         <label class="text-small">name</label>
-        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Name" formControlName="firstName">
       </div>
       <div>
         <label class="text-small">surname</label>
-        <input type="text" placeholder="Surname">
+        <input type="text" placeholder="Surname" formControlName="surname">
       </div>
       <div>
         <label class="text-small">job title</label>
-        <select name="vacation_type">
+        <select name="vacation_type" formControlName="jobTitle">
           <option value="0" selected>Job Title</option>
-          <option value="1">Other Title</option>
+          <option value="Account Manager">Account Manager</option>
+          <option value="Team Leader">Team Leader</option>
+          <option value="Administrator">Administrator</option>
         </select>
       </div>
       <div>
@@ -36,7 +38,7 @@
       </div>
       <div>
         <label class="text-small">days in vacation</label>
-        <input type="number" min="0" value="16" placeholder="Enter days">
+        <input type="number" min="0" value="16" placeholder="Enter days" formControlName="balance">
       </div>
     </div>
 
@@ -44,34 +46,34 @@
       <div class="block-inner">
         <div>
           <label class="text-small">date of birth</label>
-          <input type="text" placeholder="XX/XX/XXXX">
+          <input type="text" placeholder="XX/XX/XXXX" formControlName="birthdate">
         </div>
         <div>
           <label class="text-small">personal mail</label>
-          <input type="text" placeholder="example@mail.com">
+          <input type="text" placeholder="example@mail.com" formControlName="email">
         </div>
         <div>
           <label class="text-small">work mail</label>
-          <input type="text" placeholder="example@softheme.com">
+          <input type="text" placeholder="example@softheme.com" formControlName="workEmail">
         </div>
         <div>
           <label class="text-small">phone number</label>
-          <input type="text" placeholder="+380 12 345 67 89">
+          <input type="text" placeholder="+380 12 345 67 89" formControlName="phone">
         </div>
         <div>
           <label class="text-small">skype</label>
-          <input type="text" placeholder="userskype">
+          <input type="text" placeholder="userskype" formControlName="skype">
         </div>
       </div>
 
       <div class="block-inner">
         <div>
           <label class="text-small">hire date</label>
-          <input type="text" placeholder="XX/XX/XXXX">
+          <input type="text" placeholder="XX/XX/XXXX" formControlName="workStartDate">
         </div>
         <div>
           <label class="text-small">date of dismissal</label>
-          <input type="text" placeholder="Not Chosen">
+          <input type="text" placeholder="Not Chosen" formControlName="workEndDate">
         </div>
 
 

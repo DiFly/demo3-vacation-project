@@ -1,10 +1,10 @@
 import {TeamModel} from './team-model';
 
-export class EmployeeModel {
-  id: string;
+export interface EmployeeModel {
+  id?: string;
   firstName: string;
   surname: string;
-  avatar: string;
+  avatar?: string;
   birthdate: Date;
   jobTitle: string;
   workEmail: string;
