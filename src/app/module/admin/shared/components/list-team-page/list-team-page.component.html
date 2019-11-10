@@ -1,6 +1,6 @@
 <div class="current-user_vacations br10">
   <div class="title">
-    <p class="text-big text-bold">List of Employees</p>
+    <p class="text-big text-bold">List of Teams</p>
   </div>
 
   <table>
@@ -15,7 +15,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let team of teams">
-        <td class="text-white text-middle">{{team.name}}</td>
+        <td class="text-white text-middle">{{team?.name}}</td>
         <td class="text-middle text-grey">{{team?.teamLeadName}}</td>
         <td class="text-middle">{{team?.employeeCount}}</td>
         <td class="text-middle"><img src="/assets/img/visible.svg"></td>
