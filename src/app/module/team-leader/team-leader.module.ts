@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 import { ListVacationRequestsPageComponent } from './shared/components/list-vacation-requests-page/list-vacation-requests-page.component';
 import { TeamCalendarPageComponent } from './shared/components/team-calendar-page/team-calendar-page.component';
@@ -17,6 +18,7 @@ import {SharedModule} from '../../shared/shared.module';
   ],
   imports: [
     CommonModule,
+    FullCalendarModule,
     RouterModule.forChild([
       {path: '', redirectTo: '/team/vacation-requests', pathMatch: 'full'},
       {path: 'vacation-requests', component: ListVacationRequestsPageComponent},
