@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
 
 @Component({
   selector: 'app-team-calendar',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./team-calendar-page.component.scss']
 })
 export class TeamCalendarPageComponent implements OnInit {
+  calendarPlugins = [dayGridPlugin];
 
   constructor() { }
 
