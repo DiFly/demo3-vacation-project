@@ -45,6 +45,10 @@
             <p class="text-small">Diana Rose</p>
             <button class="text-small">x</button>
           </div>
+          <div *ngIf="usersOfTeam.length == 0" class="single-member">
+            <p class="text-small">No user in list</p>
+            <button class="text-small"></button>
+          </div>
         </div>
 
         <!--          ToDO Input field for finding members-->
