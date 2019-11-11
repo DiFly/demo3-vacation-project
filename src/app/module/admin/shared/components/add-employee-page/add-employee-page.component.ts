@@ -1,5 +1,7 @@
+import {Location} from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+
 import {EmployeeModel} from '../../../../../shared/models/employee-model';
 import {EmployeeService} from '../../../../../shared/services/employee.service';
 import {TeamModel} from '../../../../../shared/models/team-model';
@@ -16,6 +18,7 @@ export class AddEmployeePageComponent implements OnInit {
   teams: TeamModel[];
 
   constructor(
+    private location: Location,
     private employeeService: EmployeeService,
     private teamService: TeamService
     ) { }
@@ -28,6 +31,7 @@ export class AddEmployeePageComponent implements OnInit {
       // avatar?: new FormControl(),
       birthdate: new FormControl(),
       jobTitle: new FormControl(),
+      isActive: new FormControl(),
       workEmail: new FormControl(),
       email: new FormControl(),
       phone: new FormControl(),
@@ -58,6 +62,7 @@ export class AddEmployeePageComponent implements OnInit {
 
   cancel() {
     console.log('click cancel');
+    this.location.back();
   }
 
   saveNewUser() {
