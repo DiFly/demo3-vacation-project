@@ -67,7 +67,7 @@
           <td class="text-middle text-grey">{{employee.workEmail ? employee.workEmail : 'No work email'}}</td>
           <td class="text-white text-middle right-align">{{employee.balance}} {{employee.balance > 1 ? 'days' : 'day'}}</td>
           <td class="text-middle"><img src="/assets/img/visible.svg"></td>
-          <td class="text-middle"><img src="/assets/img/edit.png"></td>
+          <td class="text-middle" [routerLink]="['/admin/edit-employee/', employee.id]"><img src="/assets/img/edit.png"></td>
         </tr>
       </ng-container>
 

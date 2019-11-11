@@ -51,6 +51,7 @@ export class EditProfilePageComponent implements OnInit, OnDestroy {
       tap(params => console.log(params)),
       switchMap((params: ParamMap) => {
         if (params === null) {
+          console.log('tap with null');
           this.location.back();
         } else {
           return this.userService.getEmployeeById(params.get('id'));
