@@ -1,32 +1,60 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {ActivatedRoute, ParamMap} from '@angular/router';
+import { Location } from '@angular/common';
+import {switchMap, tap} from 'rxjs/operators';
+
+import {EmployeeModel} from '../../../../../shared/models/employee-model';
+import {EmployeeService} from '../../../../../shared/services/employee.service';
+import {TeamModel} from '../../../../../shared/models/team-model';
 
 @Component({
   selector: 'app-edit-profile-page',
   templateUrl: './edit-profile-page.component.html',
   styleUrls: ['./edit-profile-page.component.scss']
 })
-export class EditProfilePageComponent implements OnInit {
+export class EditProfilePageComponent implements OnInit, OnDestroy {
+  user: EmployeeModel;
   editForm: FormGroup;
 
-  constructor() { }
+  users: EmployeeModel[];
+  teams: TeamModel[];
+
+  constructor(
+    private route: ActivatedRoute,
+    private location: Location,
+    private userService: EmployeeService
+  ) { }
 
   ngOnInit() {
+    this.route.paramMap.pipe(
+      tap(params => console.log(params)),
+      switchMap((params: ParamMap) => {
+        if (params === null) {
+          this.location.back();
+        } else {
+          return this.userService.getEmployeeById(params.get('id'));
+        }
+      }),
+    ).subscribe(params => {
+      console.log('after subscribe ', params);
+    });
+
     this.editForm = new FormGroup({
       vacationType: new FormControl(),
-      // vacationDataFrom: new FormControl(),
-      // vacationDataTo: new FormControl()
     });
     this.editForm.controls.vacationType.setValue('0', {onlySelf: true});
-    // const date = new Date(new Date().valueOf() + 86_400_000);
-    // this.editForm.controls.vacationDataFrom.setValue(date.getDate() + ' / ' + (date.getMonth() + 1) + ' / ' + date.getFullYear());
+
   }
 
   cancel() {
     this.editForm.reset();
+    this.location.back();
   }
 
   sendRequestVacation() {
     alert('Click button SAVE CHANGES');
   }
+
+  ngOnDestroy(): void { }
 }

@@ -79,22 +79,16 @@
 
         <div>
           <label class="text-small">team name</label>
-          <select name="vacation_type">
-            <option value="0" selected>Team One</option>
-            <option value="1">Team Two</option>
-            <option value="2">Team Three</option>
-            <option value="3">Team Four</option>
-            <option value="4">Team Five</option>
+          <select name="vacation_type" formControlName="teamId">
+            <option value="0" selected>Select Team</option>
+            <option *ngFor="let team of teams" value="{{team.id}}">{{team.name}}</option>
           </select>
         </div>
         <div>
           <label class="text-small">team leader</label>
           <select name="vacation_type">
-            <option value="0" selected>Team Leader One</option>
-            <option value="1">Team Leader Two</option>
-            <option value="2">Team Leader Three</option>
-            <option value="3">Team Leader Four</option>
-            <option value="4">Team Leader Five</option>
+            <option value="0" selected>Select Team Leader</option>
+            <option *ngFor="let user of users" value="{{user.id}}">{{user.firstName}} {{user.surname}}</option>
           </select>
         </div>
 

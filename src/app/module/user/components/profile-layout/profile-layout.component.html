@@ -1,7 +1,7 @@
 <div class="container">
   <div class="profile br10">
     <div class="title br10">
-      <div *ngIf="userRole === 'Administrator'" routerLink="/admin/edit-employee/{{currentUser?.id}}" class="edit"><img src="/assets/img/edit.png"></div>
+      <div *ngIf="userRole === 'Administrator'" [routerLink]="['/admin/edit-employee/', currentUser.id]" class="edit"><img src="/assets/img/edit.png"></div>
       <p class="text-big text-bold">My Profile</p>
     </div>
 

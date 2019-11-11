@@ -3,6 +3,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 import {EmployeeModel} from '../../../../../shared/models/employee-model';
 import {EmployeeService} from '../../../../../shared/services/employee.service';
 import {TeamModel} from '../../../../../shared/models/team-model';
+import {TeamService} from '../../../../../shared/services/team.service';
 
 @Component({
   selector: 'app-add-employee-page',
@@ -11,8 +12,13 @@ import {TeamModel} from '../../../../../shared/models/team-model';
 })
 export class AddEmployeePageComponent implements OnInit {
   editForm: FormGroup;
+  users: EmployeeModel[];
+  teams: TeamModel[];
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(
+    private employeeService: EmployeeService,
+    private teamService: TeamService
+    ) { }
 
   ngOnInit() {
     this.editForm = new FormGroup({
@@ -40,6 +46,14 @@ export class AddEmployeePageComponent implements OnInit {
 
     const date = new Date(new Date().valueOf() + 86_400_000);
     this.editForm.controls.workStartDate.setValue(date.getDate() + ' / ' + (date.getMonth() + 1) + ' / ' + date.getFullYear());
+
+    this.employeeService.getEmployeeAll().subscribe(data => {
+      this.users = data;
+    });
+
+    this.teamService.getTeamAll().subscribe(data => {
+      this.teams = data;
+    });
   }
 
   cancel() {
@@ -65,7 +79,7 @@ export class AddEmployeePageComponent implements OnInit {
 
       // vacationType: new FormControl(),
       // deleted: new FormControl(),
-      // teamId: new FormControl(),
+      teamId: this.editForm.value.teamId,
       // teams: new FormControl(),
     } as EmployeeModel;
 
