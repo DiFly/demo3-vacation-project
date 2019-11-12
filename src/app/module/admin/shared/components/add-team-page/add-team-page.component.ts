@@ -13,6 +13,7 @@ import {Location} from '@angular/common';
 export class AddTeamPageComponent implements OnInit {
   addTeamForm: FormGroup;
   usersAll: EmployeeModel[];
+  usersForFoundMembers: EmployeeModel[];
   usersOfTeam: EmployeeModel[];
 
   constructor(
@@ -20,7 +21,7 @@ export class AddTeamPageComponent implements OnInit {
     private teamService: TeamService,
     private userService: EmployeeService
     ) {
-    this.usersOfTeam = new Array();
+    this.usersOfTeam = [];
   }
 
   ngOnInit() {
@@ -28,7 +29,10 @@ export class AddTeamPageComponent implements OnInit {
       teamName: new FormControl(),
       teamLeader: new FormControl(),
     });
-    // this.addTeamForm.controls.vacationType.setValue('0', {onlySelf: true});
+    this.userService.getEmployeeAll().subscribe(data => {
+      this.usersAll = data;
+      this.usersForFoundMembers = data;
+    });
   }
 
   cancel() {
@@ -36,5 +40,29 @@ export class AddTeamPageComponent implements OnInit {
   }
 
   saveNewTeam() {
+    // ToDo save new team
+  }
+
+  addMemberToTeam(member: EmployeeModel) {
+    if (this.usersOfTeam.includes(member)) {
+      console.log('addMemberToTeam: null');
+      return null;
+    } else  {
+      console.log('addMemberToTeam: push');
+      this.usersOfTeam.push(member);
+      this.usersForFoundMembers = this.usersForFoundMembers.filter(current => current.id !== member.id);
+    }
+  }
+
+  delMemberFromTeam(member: EmployeeModel) {
+    if (!this.usersOfTeam.includes(member)) {
+      console.log('delMemberFromTeam: null');
+      return null;
+    } else  {
+      console.log('delMemberFromTeam: delete');
+      this.usersOfTeam = (this.usersOfTeam.filter(current => current.id !== member.id));
+      this.usersForFoundMembers.push(member);
+      // console.log(this.usersOfTeam);
+    }
   }
 }

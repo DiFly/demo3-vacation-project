@@ -41,9 +41,9 @@
             <p class="text-small">Diana Rose</p>
             <button class="text-small">x</button>
           </div>
-          <div class="single-member">
-            <p class="text-small">Diana Rose</p>
-            <button class="text-small">x</button>
+          <div class="single-member" *ngFor="let member of usersOfTeam">
+            <p class="text-small">{{member.firstName + ' '}}{{member.surname}}</p>
+            <button class="text-small" (click)="delMemberFromTeam(member)">x</button>
           </div>
           <div *ngIf="usersOfTeam.length == 0" class="single-member">
             <p class="text-small">No user in list</p>
@@ -61,13 +61,15 @@
       <div class="found-members">
         <label class="text-small">found members</label>
 <!--        ToDo This is ngFor block-->
-        <div class="found-member">
-          <img src="/assets/img/user.png">
-          <p class="text-middle-plus">Name Surname</p>
-        </div>
-        <div class="found-member">
-          <img src="/assets/img/user.png">
-          <p class="text-middle-plus">Name Surname</p>
+<!--        <div class="found-member">-->
+<!--          <img src="/assets/img/user.png">-->
+<!--          <p class="text-middle-plus">Name Surname</p>-->
+<!--          <button>ADD</button>-->
+<!--        </div>-->
+        <div class="found-member" *ngFor="let member of usersForFoundMembers">
+          <img src="{{!member?.avatar ? '/assets/img/user.png' : member.avatar}}">
+          <p class="text-middle-plus">{{member?.firstName + ' '}}{{member?.surname}}</p>
+          <button (click)="addMemberToTeam(member)">ADD</button>
         </div>
       </div>
 

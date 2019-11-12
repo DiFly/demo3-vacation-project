@@ -98,10 +98,16 @@
         }
 
         .found-members {
+          display: flex;
+          flex-wrap: wrap;
+          align-content: flex-start;
+
           .found-member {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
+            justify-content: space-between;
+            width: 200px;
 
             img{
               height: 30px;
@@ -114,6 +120,14 @@
 
             P {
               display: inline-block;
+              white-space: normal;
+              overflow: hidden; /* Обрезаем все, что не помещается в область */
+              text-overflow: ellipsis; /* Добавляем многоточие */
+            }
+
+            button {
+              width: 50px;
+              margin-left: 10px;
             }
           }
         }
