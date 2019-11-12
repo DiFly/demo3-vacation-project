@@ -21,26 +21,26 @@
       <div class="block-inner">
         <label class="text-small">members</label>
         <div class="block-with-finding-members br10">
-          <div class="single-member">
-            <p class="text-small">Vasya Pupkin</p>
-            <button class="text-small">x</button>
-          </div>
-          <div class="single-member">
-            <p class="text-small">Vasya Petechkin</p>
-            <button class="text-small">x</button>
-          </div>
-          <div class="single-member">
-            <p class="text-small">Diana Rose</p>
-            <button class="text-small">x</button>
-          </div>
-          <div class="single-member">
-            <p class="text-small">Diana Rose jdfhgjk dkghdjkfghjkdfhgkh</p>
-            <button class="text-small">x</button>
-          </div>
-          <div class="single-member">
-            <p class="text-small">Diana Rose</p>
-            <button class="text-small">x</button>
-          </div>
+<!--          <div class="single-member">-->
+<!--            <p class="text-small">Vasya Pupkin</p>-->
+<!--            <button class="text-small">x</button>-->
+<!--          </div>-->
+<!--          <div class="single-member">-->
+<!--            <p class="text-small">Vasya Petechkin</p>-->
+<!--            <button class="text-small">x</button>-->
+<!--          </div>-->
+<!--          <div class="single-member">-->
+<!--            <p class="text-small">Diana Rose</p>-->
+<!--            <button class="text-small">x</button>-->
+<!--          </div>-->
+<!--          <div class="single-member">-->
+<!--            <p class="text-small">Diana Rose jdfhgjk dkghdjkfghjkdfhgkh</p>-->
+<!--            <button class="text-small">x</button>-->
+<!--          </div>-->
+<!--          <div class="single-member">-->
+<!--            <p class="text-small">Diana Rose</p>-->
+<!--            <button class="text-small">x</button>-->
+<!--          </div>-->
           <div class="single-member" *ngFor="let member of usersOfTeam">
             <p class="text-small">{{member.firstName + ' '}}{{member.surname}}</p>
             <button class="text-small" (click)="delMemberFromTeam(member)">x</button>

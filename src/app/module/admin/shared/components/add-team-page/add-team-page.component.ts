@@ -4,6 +4,7 @@ import {TeamService} from '../../../../../shared/services/team.service';
 import {EmployeeService} from '../../../../../shared/services/employee.service';
 import {EmployeeModel} from '../../../../../shared/models/employee-model';
 import {Location} from '@angular/common';
+import {TeamModel} from '../../../../../shared/models/team-model';
 
 @Component({
   selector: 'app-add-team-page',
@@ -15,6 +16,8 @@ export class AddTeamPageComponent implements OnInit {
   usersAll: EmployeeModel[];
   usersForFoundMembers: EmployeeModel[];
   usersOfTeam: EmployeeModel[];
+  leaderList: EmployeeModel[];
+  currentLeader: EmployeeModel;
 
   constructor(
     private location: Location,
@@ -40,7 +43,22 @@ export class AddTeamPageComponent implements OnInit {
   }
 
   saveNewTeam() {
-    // ToDo save new team
+    // ToDo save new team, change filter to add team leader
+    const newTeam = {
+      name: this.addTeamForm.value.teamName,
+      // teamLeadName: this.addTeamForm.value.teamName,
+      teamLeadName: 'Vasyl T',
+      teamLeadId: '4cea5a26-5fc2-4d8d-89f7-f90a6947efd5',
+      deleted: false,
+      employees: this.usersOfTeam,
+      employeeCount: this.usersOfTeam.length
+    } as TeamModel;
+
+    this.teamService.postTeam(newTeam).subscribe(response => {
+      console.log(response);
+      this.addTeamForm.reset();
+      this.usersOfTeam = [];
+    });
   }
 
   addMemberToTeam(member: EmployeeModel) {

@@ -4,7 +4,7 @@ export class TeamModel {
   id?: string;
   name: string;
   teamLeadId: string;
-  deleted: boolean;
+  deleted?: boolean;
   teamLeadName: string;
   employeeCount?: number;
   employees?: EmployeeModel[];
