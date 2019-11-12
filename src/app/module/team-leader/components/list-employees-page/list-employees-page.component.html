@@ -44,7 +44,7 @@
       <ng-container  *ngFor="let employee of employees; index as i">
         <tr *ngIf="i == 0">
           <td class="flag"><img src="/assets/img/team-name.svg"></td>
-          <td class="team text-white text-middle left-align">Team Name</td>
+          <td class="team text-white text-middle left-align">{{!employee.teams[0].name ? 'No Name Of Team' : employee.teams[0].name}}</td>
           <td></td>
           <td></td>
           <td></td>
@@ -53,7 +53,7 @@
         </tr>
         <tr *ngIf="employee.teamId !== employees[(i == 0 ? i : i - 1)].teamId">
           <td class="flag"><img src="/assets/img/team-name.svg"></td>
-          <td class="team text-white text-middle left-align">Team Name</td>
+          <td class="team text-white text-middle left-align">{{employee.teams[0]?.name ? employee.teams[0].name : 'No Name Of Team'}}</td>
           <td></td>
           <td></td>
           <td></td>
