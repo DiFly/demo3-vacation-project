@@ -63,3 +63,9 @@
     <img src="/assets/img/next.svg">
   </div>
 </div>
+
+<div id="myModal" class="modal" [ngClass]="{'show' : show, 'hidden': !show}">
+  <app-vacation-request-approve-refuse class="modal-content"></app-vacation-request-approve-refuse>
+</div>
+
+<button id="myBtn" (click)="showModal()">Open Modal</button>

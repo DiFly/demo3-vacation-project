@@ -9,6 +9,8 @@ import {Vacation} from '../../../../shared/models/vacation-model';
 })
 export class ListVacationRequestsPageComponent implements OnInit {
   vacations: Vacation[];
+  currentVacation: Vacation = null;
+  show =  false;
 
   constructor(
     private vacationService: VacationService
@@ -22,4 +24,9 @@ export class ListVacationRequestsPageComponent implements OnInit {
     );
   }
 
+  showModal() {
+    console.log('show or close modal');
+    // this.show = true;
+    this.show = !this.show;
+  }
 }
