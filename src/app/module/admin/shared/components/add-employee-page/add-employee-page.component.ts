@@ -88,10 +88,15 @@ export class AddEmployeePageComponent implements OnInit {
       // teams: new FormControl(),
     } as EmployeeModel;
 
+    console.log('Add new employee', employee);
     this.employeeService.postEmployee(employee).subscribe(data => console.log(data));
   }
 
   private changeToDate(value: string): Date {
+    if (value === null) {
+      return null;
+    }
+
     const ourDate = value.split('/').map( n => +(n.trim()));
     function notNaN(array: any[]): boolean {
       for (const t of array) {
