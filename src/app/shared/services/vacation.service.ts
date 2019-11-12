@@ -51,8 +51,19 @@ export class VacationService {
       );
   }
 
-
-  // ToDo Put api/Vacation change
+  putChangeVacation(vacation: Vacation) {
+    console.log('vacation-service: ', vacation);
+    return this.http.put<Vacation>(this.apiURL, vacation)
+      .pipe(
+        tap(data => {
+          console.log('Tap from create vacation', data);
+        }),
+        catchError( error => {
+          console.log('Error from create vacation', error);
+          return of({results: null});
+        })
+      );
+  }
 
   getVacationById(id: string) {
     return this.http.get<Vacation>(`${this.apiURL}/${id}`).pipe(

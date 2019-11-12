@@ -9,13 +9,15 @@ import { ListEmployeesPageComponent } from './components/list-employees-page/lis
 import { EmployeeProfilePageComponent } from './components/employee-profile-page/employee-profile-page.component';
 import {SharedModule} from '../../shared/shared.module';
 import {CalendarService} from './service/calendar.service';
+import { VacationRequestApproveRefuseComponent } from './components/vacation-request-approve-refuse/vacation-request-approve-refuse.component';
 
 @NgModule({
   declarations: [
     ListVacationRequestsPageComponent,
     TeamCalendarPageComponent,
     ListEmployeesPageComponent,
-    EmployeeProfilePageComponent
+    EmployeeProfilePageComponent,
+    VacationRequestApproveRefuseComponent
   ],
   imports: [
     CommonModule,
